@@ -38,7 +38,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio author={post.frontmatter.author} authorDesc={post.frontmatter.authorDesc} />
+        <Bio author={post.frontmatter.author}  />
         <ul
           style={{
             display: 'flex',
@@ -88,7 +88,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
-        authorDesc
       }
     }
   }

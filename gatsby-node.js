@@ -21,7 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     author
-                    authorDesc
                   }
                 }
               }
