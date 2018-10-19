@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'GraphQL Blog',
     author: 'Artur Czemiel',
-    description: 'Blog about GraphQL, React, React XP and all frontend related stuff',
+    description:
+      'Blog about GraphQL, React, React XP and all frontend related stuff',
     siteUrl: 'https://blog.graphqleditor.com',
   },
   pathPrefix: '/',
@@ -43,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-127595045-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -59,7 +60,6 @@ module.exports = {
         icon: `src/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
