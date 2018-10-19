@@ -7,6 +7,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
+import { Twitter } from '../components/Twitter'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,10 +15,14 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const { previous, next } = this.props.pageContext
-
     return (
       <React.Fragment>
-        <Nav />
+        <Nav
+          Twitter={{
+            text: post.frontmatter.title,
+            url: this.props.location.href,
+          }}
+        />
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
@@ -36,6 +41,12 @@ class BlogPostTemplate extends React.Component {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div style={{ textAlign: 'right', marginBottom:rhythm(1) }}>
+            <Twitter
+              text={post.frontmatter.title}
+              url={this.props.location.href}
+            />
+          </div>
           <hr
             style={{
               marginBottom: rhythm(1),

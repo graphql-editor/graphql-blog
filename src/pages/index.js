@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
-import { Nav } from '../components/Nav';
+import { Nav } from '../components/Nav'
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +19,13 @@ class BlogIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <Nav />
+        <Nav
+          Twitter={{
+            text:
+              'Check out this Graph QL Blog. Read about GraphQL ReactXP and other new technologies!',
+            url: 'https://blog.graphqleditor.com/',
+          }}
+        />
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}

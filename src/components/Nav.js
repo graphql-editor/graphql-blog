@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { Github } from './Github'
 import { rhythm } from '../utils/typography'
-export const Nav = () => (
+import { Twitter } from './Twitter'
+export const Nav = ({ Twitter: { text, url } }) => (
   <div
     style={{
       width: '100%',
@@ -18,25 +19,34 @@ export const Nav = () => (
         maxWidth: rhythm(24),
       }}
     >
+      <div
+        style={{
+          marginRight: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Twitter text={text} url={url} />
+        <Github />
+      </div>
       <a
-      href={"https://graphqleditor.com"}
-      style={{
-          textDecoration:'none',
-          boxShadow:'none'
-      }}>
+        href={'https://graphqleditor.com'}
+        style={{
+          textDecoration: 'none',
+          boxShadow: 'none',
+          display: 'inline-flex',
+        }}
+      >
         <img
           src={require('../assets/logo_small.png')}
           style={{
             margin: 0,
             height: 20,
             width: 186,
-            textDecoration:'none'
+            textDecoration: 'none',
           }}
         />
       </a>
-      <div style={{ marginLeft: 'auto' }}>
-        <Github />
-      </div>
     </div>
   </div>
 )
