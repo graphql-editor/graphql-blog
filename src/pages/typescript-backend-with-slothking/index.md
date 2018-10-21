@@ -6,9 +6,9 @@ author: Artur
 
 Making backend with nodejs and typescript is trendy nowadays. In this article I will show you the way how to make it type safe and totaly connected with frontend within a short period of time.
 
-To make this kind of backend I have to use my open source experimental tool [slothking](slothking.online). First of all we will create a diagram for our backend. We will not use any extensions to make everything from scratch.
+To make this kind of backend I have to use my open source experimental tool [slothking](https://slothking.online). First of all we will create a diagram for our backend. We will not use any extensions to make everything from scratch.
 
-1. Go to [Slothking App](slothking.online)
+1. Go to [Slothking App](https://slothking.online)
 2. Register.
 3. Click out this diagram
 
