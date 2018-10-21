@@ -15,6 +15,7 @@ class BlogIndex extends React.Component {
       this,
       'props.data.site.siteMetadata.description'
     )
+    const canonicalUrl = get(this, 'props.location.href')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
@@ -29,6 +30,7 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
+            link={[{rel: 'canonical', href: canonicalUrl}]}
             meta={[{ name: 'description', content: siteDescription }]}
             title={siteTitle}
           />

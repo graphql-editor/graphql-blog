@@ -11,6 +11,7 @@ export const Twitter = ({ text, url }) => (
     )}&url=${url}`}
   >
     <img
+      alt="Twitter Shield"
       src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"
       style={{ margin: 0, height: 30, boxShadow: 'none' }}
     />
