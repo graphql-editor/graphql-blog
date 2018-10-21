@@ -3,6 +3,10 @@
 This is the repository of graphql blog. Contribute here to see your blog post on [blog.graphqleditor.com](https://blog.graphqleditor.com)
 You need gatsby cli to develop
 
+```
+$ npm install --global gatsby-cli
+```
+
 ## Contributing
 
 1. Fork this repo
@@ -42,3 +46,16 @@ date: '2018-10-10T11:23:04.284Z'
 author: NAME
 ---
 ```
+
+### Publishing post to different services.
+
+Run
+
+```sh
+$ npm run blog
+```
+
+1. Choose blog post name
+2. Choose where to publish ( reddit, twitter, linkedin etc.) or publish to all vendors.
+3. CLI will open the prefilled submit forms in your browser
+4. Enjoy!

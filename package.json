@@ -3,6 +3,9 @@
   "description": "GraphQLBlog",
   "version": "1.0.0",
   "author": "Artur Czemiel <aexol@aexol.com>",
+  "bin": {
+    "blog": "bin/index.js"
+  },
   "dependencies": {
     "disqus-react": "^1.0.5",
     "gatsby": "^2.0.19",
@@ -35,6 +38,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
+    "gray-matter": "^4.0.1",
     "inquirer": "^6.2.0",
     "opn": "^5.4.0",
     "prettier": "^1.14.2",
@@ -54,6 +58,7 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "blog": "node ./bin/index.js publish",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
