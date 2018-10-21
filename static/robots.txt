@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://blog.graphqleditor.com/sitemap.xml
