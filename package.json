@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Artur Czemiel <aexol@aexol.com>",
   "dependencies": {
+    "disqus-react": "^1.0.5",
     "gatsby": "^2.0.19",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
@@ -34,7 +35,10 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
-    "prettier": "^1.14.2"
+    "inquirer": "^6.2.0",
+    "opn": "^5.4.0",
+    "prettier": "^1.14.2",
+    "yargs": "^12.0.3-candidate.0"
   },
   "homepage": "https://blog.graphqleditor.com",
   "keywords": [

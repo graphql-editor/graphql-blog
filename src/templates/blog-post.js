@@ -8,6 +8,7 @@ import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
 import { Twitter } from '../components/Twitter'
+import { DiscussionEmbed, CommentCount } from 'disqus-react'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -41,7 +42,7 @@ class BlogPostTemplate extends React.Component {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <div style={{ textAlign: 'right', marginBottom:rhythm(1) }}>
+          <div style={{ textAlign: 'right', marginBottom: rhythm(1) }}>
             <Twitter
               text={post.frontmatter.title}
               url={this.props.location.href}
@@ -53,6 +54,14 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <Bio author={post.frontmatter.author} />
+          <DiscussionEmbed
+            shortname="blog-graphqleditor-com"
+            config={{
+              url: this.props.location.href,
+              identifier: post.frontmatter.title + post.frontmatter.date,
+              title: post.frontmatter.title,
+            }}
+          />
           <ul
             style={{
               display: 'flex',
