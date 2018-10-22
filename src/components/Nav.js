@@ -38,6 +38,7 @@ export const Nav = ({ Twitter: { text, url } }) => (
         }}
       >
         <img
+          alt='GraphQL Editor Logo'
           src={require('../assets/logo_small.png')}
           style={{
             margin: 0,

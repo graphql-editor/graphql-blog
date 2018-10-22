@@ -15,6 +15,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
+    const cannonicalUrl = get(this.props, 'location.href')
     const { previous, next } = this.props.pageContext
     return (
       <React.Fragment>
@@ -27,6 +28,7 @@ class BlogPostTemplate extends React.Component {
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
+            link={[{rel: 'canonical', href: cannonicalUrl}]}
             meta={[{ name: 'description', content: siteDescription }]}
             title={`${post.frontmatter.title} | ${siteTitle}`}
           />

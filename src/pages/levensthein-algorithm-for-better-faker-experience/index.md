@@ -105,7 +105,7 @@ Voila, we get the correct faker structure.
 ]
 ```
 
-![](https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif)
+![Great Success](https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif)
 
 I've just added this feature to my repo [ts-api-faker](https://github.com/slothking-online/ts-api-faker)
 
