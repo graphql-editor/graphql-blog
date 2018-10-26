@@ -14,7 +14,29 @@ const reddits = [
   'reactxp',
   'graphql',
 ]
+const voats = [];
 const mediums = [
+  {
+    name: 'voat',
+    fn: ({ url, title }) =>
+      inquirer
+        .prompt([
+          {
+            type: 'list',
+            name: 'voat',
+            message: 'What voat you would like to publish to?',
+            choices: voats,
+          },
+        ])
+        .then(answers =>
+          submit({
+            medium: 'voat',
+            reddit: answers.voat,
+            title,
+            url,
+          })
+        ),
+  },
   {
     name: 'reddit',
     fn: ({ url, title }) =>
@@ -67,6 +89,8 @@ const mediums = [
 const submit = ({ medium, title, url, reddit }) =>
   opn(
     {
+      voat:
+        'https://voat.co/submit?linkpost=true&title=hello&subverse=technology',
       hackerNews: `http://news.ycombinator.com/submitlink?u=${url}&t=${encodeURIComponent(
         title
       )}`,
@@ -128,7 +152,7 @@ const argv = () =>
                   answers.medium === 'All mediums'
                     ? Promise.all(
                         mediums
-                          .filter(m => m.name !== 'reddit')
+                          .filter(m => m.name !== 'reddit' && m.name !== 'voat')
                           .map(m => m.fn(page))
                       )
                     : mediums
