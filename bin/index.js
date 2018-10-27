@@ -14,7 +14,9 @@ const reddits = [
   'reactxp',
   'graphql',
 ]
-const voats = [];
+const voats = [
+  'technology'
+];
 const mediums = [
   {
     name: 'voat',
