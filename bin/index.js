@@ -14,9 +14,7 @@ const reddits = [
   'reactxp',
   'graphql',
 ]
-const voats = [
-  'technology'
-];
+const voats = ['technology']
 const mediums = [
   {
     name: 'voat',
@@ -91,8 +89,7 @@ const mediums = [
 const submit = ({ medium, title, url, reddit }) =>
   opn(
     {
-      voat:
-        'https://voat.co/submit?linkpost=true&title=hello&subverse=technology',
+      voat: `https://voat.co/submit?linkpost=true&title=${title}&url=${url}&subverse=${reddit}`,
       hackerNews: `http://news.ycombinator.com/submitlink?u=${url}&t=${encodeURIComponent(
         title
       )}`,

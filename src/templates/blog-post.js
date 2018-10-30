@@ -9,6 +9,7 @@ import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
 import { Twitter } from '../components/Twitter'
 import { DiscussionEmbed, CommentCount } from 'disqus-react'
+import { SubscribeButton } from '../components/SubscribeButton'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -28,7 +29,7 @@ class BlogPostTemplate extends React.Component {
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
-            link={[{rel: 'canonical', href: cannonicalUrl}]}
+            link={[{ rel: 'canonical', href: cannonicalUrl }]}
             meta={[{ name: 'description', content: siteDescription }]}
             title={`${post.frontmatter.title} | ${siteTitle}`}
           />
@@ -44,12 +45,26 @@ class BlogPostTemplate extends React.Component {
             {post.frontmatter.date}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <div style={{ textAlign: 'right', marginBottom: rhythm(1) }}>
-            <Twitter
-              text={post.frontmatter.title}
-              url={this.props.location.href}
-            />
+          <h2>Hey, have a minute? </h2>
+          <p>
+            Do you want to hear latest news from backend and frontend
+            automation. We never bug you; we just send you our latest piece of
+            content.
+          </p>
+          <div
+            style={{
+              textAlign: 'right',
+              marginBottom: rhythm(1),
+              display: 'flex',
+              flexFlow: 'row nowrap',
+              alignItems: 'end',
+              justifyContent: 'center',
+              padding: rhythm(1),
+            }}
+          >
+            <SubscribeButton />
           </div>
+          <Twitter text={post.frontmatter.title} url={cannonicalUrl} />
           <hr
             style={{
               marginBottom: rhythm(1),
