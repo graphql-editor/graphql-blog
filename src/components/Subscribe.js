@@ -19,9 +19,9 @@ export class Subscribe extends React.Component {
     }
   }
   render() {
-    // if (this.state.subscribed) {
-    //   return <div>Thank you for subscribing!</div>
-    // }
+    if (this.state.subscribed) {
+      return <div>Thank you for subscribing!</div>
+    }
     return (
       <React.Fragment>
         <form

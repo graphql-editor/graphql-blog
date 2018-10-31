@@ -10,6 +10,7 @@ import { Nav } from '../components/Nav'
 import { Twitter } from '../components/Twitter'
 import { DiscussionEmbed, CommentCount } from 'disqus-react'
 import { SubscribeButton } from '../components/SubscribeButton'
+import { Sider } from '../components/Sider'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -20,6 +21,12 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     return (
       <React.Fragment>
+        <Sider
+          Twitter={{
+            url: cannonicalUrl,
+            title: post.frontmatter.title,
+          }}
+        />
         <Nav
           Twitter={{
             text: post.frontmatter.title,
@@ -64,7 +71,6 @@ class BlogPostTemplate extends React.Component {
           >
             <SubscribeButton />
           </div>
-          <Twitter text={post.frontmatter.title} url={cannonicalUrl} />
           <hr
             style={{
               marginBottom: rhythm(1),

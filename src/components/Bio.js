@@ -8,11 +8,13 @@ import 'typeface-merriweather'
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 import { Authors } from './authors'
+import { Follow } from './Github'
 class Bio extends React.Component {
   render() {
     const author = get(this, 'props.author', 'Artur')
     const authorObject = Authors[author]
     const email = get(authorObject, 'email', 'hello@slothking.online')
+    const github = get(authorObject, 'github')
     const name = get(
       authorObject,
       'name',
@@ -47,6 +49,7 @@ class Bio extends React.Component {
           Written by <strong>{name}</strong>
           {` ${desc} `} email me:
           <a href={`mailto:${email}`}>{email}</a>
+          {github && <Follow name={github} />}
         </div>
       </div>
     )

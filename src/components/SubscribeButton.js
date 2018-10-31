@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { UpButton } from './UpButton'
-import { Subscribe } from './Subscribe';
+import { Subscribe } from './Subscribe'
 
 export class SubscribeButton extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export class SubscribeButton extends React.Component {
     return (
       <React.Fragment>
         <UpButton
-        href={null}
+          href={null}
           onClick={() => {
             this.setState({
               subscribing: true,

@@ -11,3 +11,13 @@ export const Github = () => (
     }}
   />
 )
+export const Follow = ({ name }) => (
+  <iframe
+    src={`https://ghbtns.com/github-btn.html?user=${name}&type=follow&count=true`}
+    frameborder="0"
+    scrolling="0"
+    width="170px"
+    height="20px"
+    style={{margin:0}}
+  />
+)

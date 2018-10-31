@@ -30,8 +30,14 @@ class BlogIndex extends React.Component {
         <Layout location={this.props.location}>
           <Helmet
             htmlAttributes={{ lang: 'en' }}
-            link={[{rel: 'canonical', href: canonicalUrl}]}
-            meta={[{ name: 'description', content: siteDescription }]}
+            link={[{ rel: 'canonical', href: canonicalUrl }]}
+            meta={[
+              { name: 'description', content: siteDescription },
+              {
+                name: 'google-site-verification',
+                content: '49EjfDNUeTSlHmKmXSV7vCpWiIEQMOYy8dm1yvNvw2o',
+              },
+            ]}
             title={siteTitle}
           />
           {posts.map(({ node }) => {
