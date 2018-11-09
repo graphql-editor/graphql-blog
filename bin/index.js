@@ -13,6 +13,10 @@ const reddits = [
   'reactjs',
   'reactxp',
   'graphql',
+  'programming',
+  'technology',
+  'startups',
+  'learnprogramming'
 ]
 const voats = ['technology']
 const mediums = [
