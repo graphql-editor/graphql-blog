@@ -32,11 +32,6 @@ export class Sider extends React.Component {
   }
   componentDidMount() {
     this.eventScroll = document.addEventListener('scroll', e => {
-      console.log(
-        'Showin',
-        this.state.showSider,
-        document.documentElement.scrollTop
-      )
 
       if (document.documentElement.scrollTop > 500 && !this.state.showSider) {
         this.setState({

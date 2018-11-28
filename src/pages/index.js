@@ -17,7 +17,6 @@ class BlogIndex extends React.Component {
     )
     const canonicalUrl = get(this, 'props.location.href')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-
     return (
       <React.Fragment>
         <Nav
@@ -40,7 +39,7 @@ class BlogIndex extends React.Component {
             ]}
             title={siteTitle}
           />
-          {posts.map(({ node }) => {
+          {posts.filter(p=> p.node.frontmatter.title[0] !== '_').map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug
             return (
               <div key={node.fields.slug}>
