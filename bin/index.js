@@ -16,7 +16,9 @@ const reddits = [
   'programming',
   'technology',
   'startups',
-  'learnprogramming'
+  'learnprogramming',
+  'marketing',
+  'entrepreneur'
 ]
 const voats = ['technology']
 const mediums = [

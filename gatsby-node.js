@@ -2,7 +2,7 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-
+const readingTime = require('reading-time')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -12,15 +12,24 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
               edges {
                 node {
+                  rawMarkdownBody
                   fields {
                     slug
+                    readingTime
                   }
                   frontmatter {
                     title
                     author
+                    image {
+                      name
+                      publicURL
+                    }
                   }
                 }
               }
@@ -34,11 +43,12 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges
 
         _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          const previous =
+            index === posts.length - 1 ? null : posts[index + 1].node
+          const next = index === 0 ? null : posts[index - 1].node
           createPage({
             path: post.node.fields.slug,
             component: blogPost,
@@ -63,6 +73,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+    createNodeField({
+      name: `readingTime`,
+      node,
+      value: Math.ceil(readingTime(node.rawMarkdownBody).minutes) * 2,
     })
   }
 }

@@ -7,10 +7,10 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
-import { Twitter } from '../components/Twitter'
 import { DiscussionEmbed, CommentCount } from 'disqus-react'
 import { SubscribeButton } from '../components/SubscribeButton'
 import { Sider } from '../components/Sider'
+import { Seo } from '../components/Seo'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -34,11 +34,14 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Layout location={this.props.location}>
-          <Helmet
-            htmlAttributes={{ lang: 'en' }}
-            link={[{ rel: 'canonical', href: cannonicalUrl }]}
-            meta={[{ name: 'description', content: siteDescription }]}
+          <Seo
             title={`${post.frontmatter.title} | ${siteTitle}`}
+            description={siteDescription}
+            url={cannonicalUrl}
+            image={
+              post.frontmatter.image &&
+              `${this.props.location.host}${post.frontmatter.image.publicURL}`
+            }
           />
           <h1>{post.frontmatter.title}</h1>
           <p
@@ -133,6 +136,9 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
+        image {
+          publicURL
+        }
       }
     }
   }
