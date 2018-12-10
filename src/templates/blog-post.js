@@ -39,8 +39,13 @@ class BlogPostTemplate extends React.Component {
             description={siteDescription}
             url={cannonicalUrl}
             image={
-              post.frontmatter.image &&
-              `${this.props.location.host}${post.frontmatter.image.publicURL}`
+              post.frontmatter.image
+                ? `${this.props.location.origin}${
+                    post.frontmatter.image.publicURL
+                  }`
+                : `${
+                    this.props.location.origin
+                  }${require('../assets/graphql-header.jpg')}`
             }
           />
           <h1>{post.frontmatter.title}</h1>
@@ -83,7 +88,7 @@ class BlogPostTemplate extends React.Component {
           <DiscussionEmbed
             shortname="blog-graphqleditor-com"
             config={{
-              url: this.props.location.href,
+              url: cannonicalUrl,
               identifier: post.frontmatter.title + post.frontmatter.date,
               title: post.frontmatter.title,
             }}

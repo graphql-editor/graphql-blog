@@ -12,14 +12,21 @@ const reddits = [
   'reactnative',
   'reactjs',
   'reactxp',
+  'node',
+  'webdev',
   'graphql',
   'programming',
   'technology',
   'startups',
   'learnprogramming',
   'marketing',
-  'entrepreneur'
-]
+  'entrepreneur',
+  'golang',
+  'ruby',
+  'dotnet',
+  'java',
+  'python'
+].sort()
 const voats = ['technology']
 const mediums = [
   {

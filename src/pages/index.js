@@ -19,7 +19,6 @@ class BlogIndex extends React.Component {
     )
     const canonicalUrl = get(this, 'props.location.href')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
-    console.log(this.props)
     return (
       <React.Fragment>
         <Nav

@@ -5,7 +5,7 @@ export const Seo = ({
   description,
   url,
   lang = 'en',
-  image = require('../assets/graphql-header.jpg'),
+  image,
   twitter = '@GraphQLEditor',
 }) => (
   <Helmet
@@ -21,11 +21,11 @@ export const Seo = ({
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {image && <meta property="og:image" content={image} />}
+    <meta property="og:image" content={image} />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary" />
-    {image && <meta name="twitter:image" content={image} />}
+    <meta name="twitter:image" content={image} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content={twitter} />
   </Helmet>
