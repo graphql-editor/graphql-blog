@@ -1,5 +1,5 @@
 ---
-title: My saas story - oct'18 first OKRs and metrics
+title: My saas story - oct'18 first OKRs and :s
 date: '2018-11-08T15:23:04.284Z'
 author: Robert
 ---
