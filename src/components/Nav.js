@@ -1,12 +1,41 @@
 import * as React from 'react'
-import { Github } from './Github'
 import { rhythm } from '../utils/typography'
-import { Twitter } from './Twitter'
 import { UpButton } from './UpButton'
 import { HorizontalSpacer } from './HorizontalSpacer'
-import { Subscribe } from './Subscribe'
+import { style, media } from 'typestyle'
+import { Colors } from '../Colors'
+import { Link } from 'gatsby'
 
-let subscribing = false
+const Wrapper = style({
+  width: '100%',
+  background: Colors.bars,
+})
+
+const Bar = style(
+  {
+    display: 'flex',
+    alignItems: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
+    maxWidth: rhythm(24),
+  },
+  media(
+    { maxWidth: 480 },
+    { flexFlow: 'column nowrap', alignItems: 'center', alignContent: 'center' }
+  )
+)
+
+const NavMenu = style(
+  {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    alignItems: 'center',
+    marginLeft: 'auto',
+  },
+  media({ maxWidth: 480 }, { flexFlow: 'column nowrap', marginLeft: 0,marginTop:15 })
+)
+const NavButton = style({})
 
 export class Nav extends React.Component {
   render() {
@@ -14,30 +43,16 @@ export class Nav extends React.Component {
       Twitter: { text, url },
     } = this.props
     return (
-      <div
-        style={{
-          width: '100%',
-          background: '#fcfcfc',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
-            maxWidth: rhythm(24),
-          }}
-        >
+      <div className={Wrapper}>
+        <div className={Bar}>
           <div
             style={{
               display: 'flex',
               flexFlow: 'column nowrap',
             }}
           >
-            <a
-              href={'https://graphqleditor.com'}
+            <Link
+              to={'/'}
               style={{
                 textDecoration: 'none',
                 boxShadow: 'none',
@@ -46,63 +61,27 @@ export class Nav extends React.Component {
             >
               <img
                 alt="GraphQL Editor Logo"
-                src={require('../assets/logo_small.png')}
+                src={require('../assets/logo.png')}
                 style={{
                   margin: 0,
-                  height: 20,
-                  width: 186,
+                  height: 40,
                   textDecoration: 'none',
                 }}
               />
-            </a>
-            <div
-              style={{
-                fontSize: rhythm(0.4),
-                letterSpacing: rhythm(0.01),
-              }}
-            >
-              best backend creation tool
-            </div>
+            </Link>
           </div>
-          {subscribing ? (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginLeft: 'auto',
-              }}
-            >
-              <Subscribe
-                onSubscribe={e => {
-                  setTimeout(4000, () => {
-                    subscribing = false
-                    this.forceUpdate()
-                  })
-                }}
-              />
-            </div>
-          ) : (
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginLeft: 'auto',
-              }}
-            >
-              <UpButton
-                onClick={() => {
-                  subscribing = true
-                  this.forceUpdate()
-                }}
-              >
-                Subscribe
-              </UpButton>
-              <HorizontalSpacer v={10} />
-              <UpButton href={'https://demo.graphqleditor.com/'}>
-                Try demo
-              </UpButton>
-            </div>
-          )}
+          <div className={NavMenu}>
+            <HorizontalSpacer v={10} />
+            <UpButton href={'https://graphqleditor.com/'}>Home</UpButton>
+            <UpButton href={'https://graphqleditor.com/services'}>
+              Services
+            </UpButton>
+            <UpButton href={'https://graphqleditor.com/#roadmap'}>
+              Roadmap
+            </UpButton>
+            <UpButton href={'https://docs.graphqleditor.com/'}>Docs</UpButton>
+            <UpButton href={'https://app.graphqleditor.com/'}>Editor</UpButton>
+          </div>
         </div>
       </div>
     )

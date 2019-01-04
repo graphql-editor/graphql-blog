@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { SubscribeButton } from './SubscribeButton'
 import { Twitter } from './Twitter'
 import { style, media } from 'typestyle'
 import { rhythm } from '../utils/typography'
@@ -59,7 +58,6 @@ export class Sider extends React.Component {
         }}
         className={SiderStyle}
       >
-        <SubscribeButton />
         <div>
           <div
             style={{

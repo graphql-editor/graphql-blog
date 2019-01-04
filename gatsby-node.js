@@ -3,6 +3,7 @@ const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const readingTime = require('reading-time')
+const createPaginatedPages = require('gatsby-paginate')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -14,21 +15,25 @@ exports.createPages = ({ graphql, actions }) => {
           {
             allMarkdownRemark(
               sort: { fields: [frontmatter___date], order: DESC }
-              limit: 1000
             ) {
+              pageInfo {
+                hasNextPage
+              }
+              totalCount
               edges {
                 node {
+                  excerpt
                   rawMarkdownBody
                   fields {
                     slug
                     readingTime
                   }
                   frontmatter {
+                    date(formatString: "DD MMMM, YYYY")
                     title
                     author
                     image {
                       name
-                      publicURL
                     }
                   }
                 }
@@ -58,6 +63,15 @@ exports.createPages = ({ graphql, actions }) => {
               next,
             },
           })
+        })
+
+        createPaginatedPages({
+          edges: result.data.allMarkdownRemark.edges,
+          createPage: createPage,
+          pageTemplate: 'src/templates/index.js',
+          pageLength: 25, // This is optional and defaults to 10 if not used
+          pathPrefix: '', // This is optional and defaults to an empty string if not used
+          context: {}, // This is optional and defaults to an empty object if not used
         })
       })
     )

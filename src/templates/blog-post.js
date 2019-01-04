@@ -1,16 +1,21 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
-import Layout from '../components/layout'
+import { Layout } from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
 import { DiscussionEmbed, CommentCount } from 'disqus-react'
-import { SubscribeButton } from '../components/SubscribeButton'
 import { Sider } from '../components/Sider'
 import { Seo } from '../components/Seo'
+import { style } from 'typestyle'
+
+const BackToBlog = style({
+  padding: `20px 0`,
+  boxShadow: 'none',
+  position: 'absolute',
+})
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -48,6 +53,9 @@ class BlogPostTemplate extends React.Component {
                   }${require('../assets/graphql-header.jpg')}`
             }
           />
+          <Link to={'/'} className={BackToBlog}>
+            ← Back to blog
+          </Link>
           <h1>{post.frontmatter.title}</h1>
           <p
             style={{
@@ -62,9 +70,8 @@ class BlogPostTemplate extends React.Component {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <h2>Hey, have a minute? </h2>
           <p>
-            Do you want to hear latest news from backend and frontend
-            automation. We never bug you; we just send you our latest piece of
-            content.
+            Do you want to try our mock backend from GraphQL app. It is in beta
+            phase and 100% free.
           </p>
           <div
             style={{
@@ -77,7 +84,7 @@ class BlogPostTemplate extends React.Component {
               padding: rhythm(1),
             }}
           >
-            <SubscribeButton />
+            <a href="https://app.graphqleditor.com">Try visual editor app</a>
           </div>
           <hr
             style={{
@@ -85,6 +92,16 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <Bio author={post.frontmatter.author} />
+          <Link
+            style={{
+              position: 'relative',
+              marginBottom: 15,
+            }}
+            to={'/'}
+            className={BackToBlog}
+          >
+            ← Back to blog
+          </Link>
           <DiscussionEmbed
             shortname="blog-graphqleditor-com"
             config={{

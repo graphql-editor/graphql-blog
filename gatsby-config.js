@@ -48,6 +48,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
+    `json-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
