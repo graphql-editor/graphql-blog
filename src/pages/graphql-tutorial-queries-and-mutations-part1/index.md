@@ -1,5 +1,5 @@
 ---
-title: GraphQL Example - Queries and mutations Part 1
+title: GraphQL Tutorial - Queries and mutations Part 1
 date: '2019-01-02T10:23:04.284Z'
 author: Robert
 ---
