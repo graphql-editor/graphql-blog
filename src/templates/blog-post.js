@@ -45,12 +45,8 @@ class BlogPostTemplate extends React.Component {
             url={cannonicalUrl}
             image={
               post.frontmatter.image
-                ? `${this.props.location.origin}${
-                    post.frontmatter.image.publicURL
-                  }`
-                : `${
-                    this.props.location.origin
-                  }${require('../assets/graphql-header.jpg')}`
+                ? `${post.frontmatter.image.publicURL}`
+                : `${require('../assets/graphql-header.jpg')}`
             }
           />
           <Link to={'/'} className={BackToBlog}>
