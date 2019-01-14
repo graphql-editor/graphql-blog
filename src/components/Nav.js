@@ -72,7 +72,6 @@ export class Nav extends React.Component {
           </div>
           <div className={NavMenu}>
             <HorizontalSpacer v={10} />
-            <UpButton href={'https://graphqleditor.com/'}>Home</UpButton>
             <UpButton href={'https://graphqleditor.com/services'}>
               Services
             </UpButton>
@@ -80,7 +79,7 @@ export class Nav extends React.Component {
               Roadmap
             </UpButton>
             <UpButton href={'https://docs.graphqleditor.com/'}>Docs</UpButton>
-            <UpButton href={'https://app.graphqleditor.com/'}>Editor</UpButton>
+            <UpButton href={'https://graphqleditor.com/'}>Editor</UpButton>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const cannonicalUrl = get(this.props, 'location.href')
+    const fakeOrigin = 'http://blog.graphqleditor.com'
     const { previous, next } = this.props.pageContext
     return (
       <React.Fragment>
@@ -47,6 +48,11 @@ class BlogPostTemplate extends React.Component {
               post.frontmatter.image
                 ? `${post.frontmatter.image.publicURL}`
                 : `${require('../assets/graphql-header.jpg')}`
+            }
+            absouluteImage={
+              post.frontmatter.image
+                ? `${fakeOrigin}${post.frontmatter.image.publicURL}`
+                : `${fakeOrigin}${require('../assets/graphql-header.jpg')}`
             }
           />
           <Link to={'/'} className={BackToBlog}>
@@ -80,7 +86,7 @@ class BlogPostTemplate extends React.Component {
               padding: rhythm(1),
             }}
           >
-            <a href="https://app.graphqleditor.com">Try visual editor app</a>
+            <a href="https://graphqleditor.com">Try visual editor app</a>
           </div>
           <hr
             style={{

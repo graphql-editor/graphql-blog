@@ -6,6 +6,7 @@ export const Seo = ({
   url,
   lang = 'en',
   image,
+  absouluteImage,
   twitter = '@GraphQLEditor',
 }) => (
   <Helmet
@@ -30,7 +31,7 @@ export const Seo = ({
     <meta name="twitter:title" content={title} />
     <meta name="twitter:site" content={"@GraphQLEditor"} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={absouluteImage} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content={twitter} />
     
