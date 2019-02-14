@@ -21,7 +21,7 @@ Argument is a set of key-value attached to a field. The Arguments can have a for
 ## Alias
 Alias is an alternative name assigned to the result of a field to avoid conflicts during data fetching operations i.e. `admin` and `regular`.
 
-```
+```graphql
 {
  admin: users(role: admin) {
    id
@@ -42,7 +42,7 @@ An explanation preceded by a `@` that encloses the logic for query execution on 
 ## Field
 A basic unit of data you request from your schema returned as a field in JSON response i.e. `id`and `name`.
 
-```
+```graphql
 type User {
  id: Int!
  name: String
@@ -63,7 +63,7 @@ A method to provide precise information about the schema of a GraphQL API. Intro
 ## Mutation
 One of basic GraphQL operation allowing to manipulate data (create, modify, delete).
 
-```
+```graphql
 mutation DeleteTodo($type: String!) {
  deleteTodo(type: $type) {
    id
@@ -74,7 +74,7 @@ mutation DeleteTodo($type: String!) {
 
 ## Object Type
 It's type in a GraphQL schema that contains fields. `User` is our Object Type here:
-```
+```graphql
 type User {
   name: String!,
 }
@@ -86,13 +86,13 @@ The single query, mutation or subscription, which could be interpreted by execut
 ## Operation Name
 A name for above-mentioned elements. Name make a lot easier identifying, logging or debugging errors in a GraphQL server.
 
-## Querry
+## Query
 It's a basic fetch operation to reqest data in GraphQL.
 
-## Querry Colocation
+## Query Colocation
 One of [GraphQL best practices](https://graphql.org/learn/best-practices/), where you place a GraphQL query in the same location as the app component’s view logic.
 
-## Querry whitelisting
+## Query whitelisting
 A security practice involving defining a list of approved queries that are allowed in your app.
 
 ## Resolver
@@ -107,7 +107,7 @@ A GraphQL Schema Definition is a way to define a GraphQL schema. The syntax is a
 
 The GraphQL schema for a movie review site could be defined like this:
 
-```
+```graphql
 type Review {
  id: String!
  title: String!
@@ -130,11 +130,11 @@ Merging minor schemas into central GraphQL schema.
 ## Subscription
 Is a real-time operation in GraphQL that is defined in a schema.
 
-```
+```graphql
 type Subscription {
  reviewAdded(repoFullName: String!): Review
 }
-...
+...graphql
 subscription onReviewAdded($repoFullName: String!){
  reviewAdded(repoFullName: $repoFullName){
    id
@@ -153,7 +153,7 @@ It's a set of rules that define the set of data that can be valiudated, queried 
 ## Variable
 It's a value that can be passed to an operation, like `userID` in below example:
 
-```
+```graphql
 query GetUser($userId: ID!){
  user(id: $userId){
    name
