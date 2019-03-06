@@ -6,7 +6,7 @@ import Bio from '../components/Bio'
 import { Layout } from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 import { Nav } from '../components/Nav'
-import { DiscussionEmbed, CommentCount } from 'disqus-react'
+import { DiscussionEmbed } from 'disqus-react'
 import { Sider } from '../components/Sider'
 import { Seo } from '../components/Seo'
 import { style } from 'typestyle'
@@ -22,9 +22,10 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
-    const cannonicalUrl = get(this.props, 'location.href')
+    const cannonicalUrl = `https://blog.graphqleditor.com${post.fields.slug}`
     const fakeOrigin = 'http://blog.graphqleditor.com'
     const { previous, next } = this.props.pageContext
+    console.log(post)
     return (
       <React.Fragment>
         <Sider
@@ -156,6 +157,9 @@ export const pageQuery = graphql`
       id
       excerpt
       html
+      fields{
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -30,6 +30,7 @@ export const ArticleTile = ({
       }}
     >
       <img
+        alt={`${Authors[author].name}`}
         src={Authors[author].photo}
         style={{
           width: 40,

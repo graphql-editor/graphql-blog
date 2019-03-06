@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
-import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 import { Authors } from './authors'
 import { Follow } from './Github'

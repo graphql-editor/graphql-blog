@@ -46,7 +46,7 @@ class BlogIndex extends React.Component {
       this,
       'props.pathContext'
     )
-    const previousUrl = index - 1 == 1 ? '' : (index - 1).toString()
+    const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
     const nextUrl = (index + 1).toString()
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
@@ -77,6 +77,7 @@ class BlogIndex extends React.Component {
               },
             ]}
           />
+          <h1>Everything about GraphQL.</h1>
           {posts
             .filter(p => p.node.frontmatter.title[0] !== '_')
             .map(({ node }) => {

@@ -35,13 +35,9 @@ const NavMenu = style(
   },
   media({ maxWidth: 480 }, { flexFlow: 'column nowrap', marginLeft: 0,marginTop:15 })
 )
-const NavButton = style({})
 
 export class Nav extends React.Component {
   render() {
-    const {
-      Twitter: { text, url },
-    } = this.props
     return (
       <div className={Wrapper}>
         <div className={Bar}>

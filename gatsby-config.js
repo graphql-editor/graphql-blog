@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'GraphQL Blog',
+    title: 'GraphQL Blog: Learning GraphQL, Tutorials, Examples, Tools',
     author: 'Artur Czemiel',
     description:
-      'Blog about GraphQL, React, React XP and all frontend related stuff',
+      'Learn everything about GraphQL. How it works, how it looks comparing GraphQL vs REST? What are the issues with GraphQL performance? You will find out everything from our GraphQL tutorials and examples.',
     siteUrl: 'https://blog.graphqleditor.com',
   },
   pathPrefix: '/',
@@ -69,5 +69,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-html2amp',
+      options: {
+        files: ['**/*.html'],
+        dist: 'public/amp',
+      },
+    },
   ],
 }

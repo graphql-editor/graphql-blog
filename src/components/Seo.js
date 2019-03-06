@@ -17,6 +17,8 @@ export const Seo = ({
     link={[{ rel: 'canonical', href: url }]}
   >
     <title>{title}</title>
+    <link rel="canonical" href={url} />
+    <link rel="amphtml" href={url} />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, " />
     <meta name="keywords" content="graphql, editor, blog, tutorial, rest, react"/>
