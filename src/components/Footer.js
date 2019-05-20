@@ -60,7 +60,7 @@ export class Footer extends React.Component {
             ))}
           </div>
           <div className={Copyright}>
-            <p>&copy; Copyright 2018 AEXOL/Slothking/Graphqleditor.com</p>
+            <p>&copy; Copyright 2018 Graphqleditor.com</p>
           </div>
         </Layout>
       </footer>

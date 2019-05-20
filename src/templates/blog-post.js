@@ -9,12 +9,14 @@ import { Nav } from '../components/Nav'
 import { DiscussionEmbed } from 'disqus-react'
 import { Sider } from '../components/Sider'
 import { Seo } from '../components/Seo'
+import { Footer } from '../components/Footer'
+import { ColorsSystem } from '../Colors'
 import { style } from 'typestyle'
 
-const BackToBlog = style({
-  padding: `20px 0`,
-  boxShadow: 'none',
-  position: 'absolute',
+const BackButton = style({
+  marginRight: rhythm(1.0),
+  color: ColorsSystem['Ashes'],
+  ...scale(-1 / 2),
 })
 
 class BlogPostTemplate extends React.Component {
@@ -23,6 +25,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteDescription = post.excerpt
     const cannonicalUrl = `https://blog.graphqleditor.com${post.fields.slug}`
+    const ampUrl = `https://blog.graphqleditor.com/amp/${post.fields.slug}`
     const fakeOrigin = 'http://blog.graphqleditor.com'
     const { previous, next } = this.props.pageContext
     console.log(post)
@@ -44,6 +47,7 @@ class BlogPostTemplate extends React.Component {
           <Seo
             title={`${post.frontmatter.title} | ${siteTitle}`}
             description={siteDescription}
+            ampUrl={ampUrl}
             url={cannonicalUrl}
             image={
               post.frontmatter.image
@@ -56,20 +60,25 @@ class BlogPostTemplate extends React.Component {
                 : `${fakeOrigin}${require('../assets/graphql-header.jpg')}`
             }
           />
-          <Link to={'/'} className={BackToBlog}>
-            ← Back to blog
-          </Link>
-          <h1>{post.frontmatter.title}</h1>
+          <h1 style={{ textAlign: 'center', marginBottom: rhythm(1 / 2) }}>
+            {post.frontmatter.title}
+          </h1>
           <p
             style={{
               ...scale(-1 / 5),
               display: 'block',
-              marginBottom: rhythm(1),
-              marginTop: rhythm(-1),
+              textAlign: 'center',
+              color: ColorsSystem['Space Pirate'],
+              marginBottom: rhythm(0),
             }}
           >
-            {post.frontmatter.date}
+            {`${post.frontmatter.date} by ${post.frontmatter.author}`}
           </p>
+          <div style={{ textAlign: 'center', marginBottom: rhythm(1.0) }}>
+            <Link to={'/'} className={BackButton}>
+              ← back to blog
+            </Link>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <h2>Hey, have a minute? </h2>
           <p>
@@ -101,7 +110,6 @@ class BlogPostTemplate extends React.Component {
               marginBottom: 15,
             }}
             to={'/'}
-            className={BackToBlog}
           >
             ← Back to blog
           </Link>
@@ -124,20 +132,29 @@ class BlogPostTemplate extends React.Component {
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <Link
+                  to={previous.fields.slug}
+                  rel="prev"
+                  style={{ marginRight: 'auto', color: ColorsSystem.Triton }}
+                >
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link
+                  to={next.fields.slug}
+                  rel="next"
+                  style={{ marginLeft: 'auto' }}
+                >
                   {next.frontmatter.title} →
                 </Link>
               )}
             </li>
           </ul>
         </Layout>
+        <Footer />
       </React.Fragment>
     )
   }
@@ -157,7 +174,7 @@ export const pageQuery = graphql`
       id
       excerpt
       html
-      fields{
+      fields {
         slug
       }
       frontmatter {

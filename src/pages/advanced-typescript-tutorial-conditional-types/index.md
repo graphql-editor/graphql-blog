@@ -4,7 +4,7 @@ date: '2018-12-11T09:23:04.284Z'
 author: Artur
 ---
 
-Hello This is second article of advanced typescript tutorial series. Today I'll cover basic usage of
+Hello, This is the second article of the advanced typescript tutorial series. Today I'll cover the basic usage of
 
 ```typescript
 extends
@@ -22,14 +22,14 @@ const e:StringOrArray<typeof b> = "array"
 let f:StringOrArray<typeof c> 
 ```
 
-So lets analyze this code:
+So let's analyze this code:
 
-1. We check if our generic Type is string array
+1. We check if our generic Type is a string array
 2. If it is array make type as string constant 'array'
-3. If it is not check the type. If it is string make type as string constant 'string'
+3. If it does not check the type. If it is string make type as string constant 'string'
 4. Else the type is never
    
-To be truth this code is useless but can give you some scope how `extends` keyword works. Next example will be real world example where we determine the type of the form field to give user correct options.
+To be the truth this code is useless but can give you some scope how `extends` keyword works. Next example will be a real-world example where we determine the type of the form field to give the user correct options.
 
 ```typescript
 type FieldType = "string" | "float" | "date"
@@ -57,7 +57,7 @@ const dateField:Field<"date"> = {
 }
 ```
 
-This is a little bit more advanced. Whats going on with FieldType? It just checks the string converted to generic type to return correct type.
+This is a little bit more advanced. What's going on with FieldType? It just checks the string converted to generic type to return correct type.
 
 ```typescript
 
@@ -98,4 +98,4 @@ FieldExtended({
 
 ```
 
-And this is what typescript is made for. To provide complicated autocompletion stuff :). Wait for next series of advanced typescirpt tutorial.
+And this is what typescript is made for. To provide complicated autocompletion stuff :). Wait for the next series of advanced typescript tutorial.

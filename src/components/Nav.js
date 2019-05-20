@@ -8,16 +8,16 @@ import { Link } from 'gatsby'
 
 const Wrapper = style({
   width: '100%',
-  background: Colors.bars,
 })
 
 const Bar = style(
   {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
+    padding: `${rhythm(1.5)} ${rhythm(3 / 4)} ${rhythm(1.5)}`,
     maxWidth: rhythm(24),
   },
   media(
@@ -25,58 +25,30 @@ const Bar = style(
     { flexFlow: 'column nowrap', alignItems: 'center', alignContent: 'center' }
   )
 )
-
-const NavMenu = style(
-  {
-    display: 'flex',
-    flexFlow: 'row nowrap',
-    alignItems: 'center',
-    marginLeft: 'auto',
-  },
-  media({ maxWidth: 480 }, { flexFlow: 'column nowrap', marginLeft: 0,marginTop:15 })
-)
-
 export class Nav extends React.Component {
   render() {
     return (
       <div className={Wrapper}>
         <div className={Bar}>
-          <div
+          <a
+            href={'https://graphqleditor.com'}
+            target="_blank"
             style={{
-              display: 'flex',
-              flexFlow: 'column nowrap',
+              textDecoration: 'none',
+              boxShadow: 'none',
+              display: 'inline-flex',
             }}
           >
-            <Link
-              to={'/'}
+            <img
+              alt="GraphQL Editor Logo"
+              src={require('../assets/logoText.png')}
               style={{
+                margin: 0,
+                height: 50,
                 textDecoration: 'none',
-                boxShadow: 'none',
-                display: 'inline-flex',
               }}
-            >
-              <img
-                alt="GraphQL Editor Logo"
-                src={require('../assets/logo.png')}
-                style={{
-                  margin: 0,
-                  height: 40,
-                  textDecoration: 'none',
-                }}
-              />
-            </Link>
-          </div>
-          <div className={NavMenu}>
-            <HorizontalSpacer v={10} />
-            <UpButton href={'https://graphqleditor.com/services'}>
-              Services
-            </UpButton>
-            <UpButton href={'https://graphqleditor.com/#roadmap'}>
-              Roadmap
-            </UpButton>
-            <UpButton href={'https://docs.graphqleditor.com/'}>Docs</UpButton>
-            <UpButton href={'https://graphqleditor.com/'}>Editor</UpButton>
-          </div>
+            />
+          </a>
         </div>
       </div>
     )

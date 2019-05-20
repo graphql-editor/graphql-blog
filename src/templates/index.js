@@ -9,8 +9,8 @@ import { Seo } from '../components/Seo'
 import { ArticleTile } from '../components/ArticleTile'
 
 import { style } from 'typestyle'
-import { Colors } from '../Colors'
-import { rhythm } from '../utils/typography'
+import { Colors, ColorsSystem } from '../Colors'
+import { rhythm, scale } from '../utils/typography'
 import { Footer } from '../components/Footer'
 
 const Pagination = {
@@ -21,12 +21,12 @@ const Pagination = {
     justifyContent: 'flex-end',
   }),
   link: style({
-    color: Colors.main,
+    color: ColorsSystem.Triton,
     fontWeight: 'lighter',
-    fontSize: rhythm(1.0),
     textDecoration: 'none',
     boxShadow: 'none',
     letterSpacing: 2,
+    ...scale(1 / 2),
   }),
 }
 
@@ -46,6 +46,7 @@ class BlogIndex extends React.Component {
       this,
       'props.pathContext'
     )
+    console.log(get(this, 'props.location'))
     const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
     const nextUrl = (index + 1).toString()
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -77,7 +78,14 @@ class BlogIndex extends React.Component {
               },
             ]}
           />
-          <h1>Everything about GraphQL.</h1>
+          <h1
+            style={{
+              textAlign: 'center',
+              padding: `0 0 ${rhythm(1.5)}`,
+            }}
+          >
+            Everything about GraphQL.
+          </h1>
           {posts
             .filter(p => p.node.frontmatter.title[0] !== '_')
             .map(({ node }) => {
@@ -96,12 +104,20 @@ class BlogIndex extends React.Component {
             })}
           <div className={Pagination.div}>
             {!first && (
-              <Link className={Pagination.link} to={previousUrl}>
+              <Link
+                className={Pagination.link}
+                to={previousUrl}
+                style={{ marginRight: 'auto' }}
+              >
                 ← previous
               </Link>
             )}
             {!last && (
-              <Link className={Pagination.link} to={nextUrl}>
+              <Link
+                className={Pagination.link}
+                to={nextUrl}
+                style={{ marginLeft: 'auto' }}
+              >
                 next →
               </Link>
             )}

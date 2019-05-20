@@ -4,6 +4,7 @@ export const Seo = ({
   title,
   description,
   url,
+  ampUrl = 'https://blog.graphqleditor.com/amp/',
   lang = 'en',
   image,
   absouluteImage,
@@ -18,10 +19,13 @@ export const Seo = ({
   >
     <title>{title}</title>
     <link rel="canonical" href={url} />
-    <link rel="amphtml" href={url} />
+    <link rel="amphtml" href={ampUrl} />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, " />
-    <meta name="keywords" content="graphql, editor, blog, tutorial, rest, react"/>
+    <meta
+      name="keywords"
+      content="graphql, editor, blog, tutorial, rest, react"
+    />
     <meta property="og:site_name" content={`GraphQL Editor`} />
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
@@ -31,11 +35,10 @@ export const Seo = ({
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:site" content={"@GraphQLEditor"} />
+    <meta name="twitter:site" content={'@GraphQLEditor'} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={absouluteImage} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content={twitter} />
-    
   </Helmet>
 )

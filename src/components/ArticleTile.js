@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Colors } from '../Colors'
+import { Colors, ColorsSystem } from '../Colors'
 import { rhythm } from '../utils/typography'
 import { Link } from 'gatsby'
 import { Authors } from './authors'
@@ -12,17 +12,32 @@ export const ArticleTile = ({
   date,
   readingTime,
 }) => (
-  <div key={slug}>
+  <div
+    style={{
+      marginBottom: rhythm(2.0),
+    }}
+    key={slug}
+  >
     <h3
       style={{
         marginBottom: rhythm(1 / 4),
       }}
     >
-      <Link style={{ boxShadow: 'none', color: Colors.main }} to={slug}>
+      <Link
+        style={{
+          boxShadow: 'none',
+          color: ColorsSystem['Infinito'],
+          textDecoration: 'none',
+        }}
+        to={slug}
+      >
         {title}
       </Link>
     </h3>
-    <p dangerouslySetInnerHTML={{ __html: excerpt }} />
+    <p
+      dangerouslySetInnerHTML={{ __html: excerpt }}
+      style={{ marginBottom: rhythm(1 / 2) }}
+    />
     <div
       style={{
         display: 'flex',
@@ -43,14 +58,14 @@ export const ArticleTile = ({
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div
           style={{
-            color: Colors.orange,
+            color: ColorsSystem['Lead'],
             fontSize: rhythm(1 / 2),
           }}
         >
           {Authors[author].name}
         </div>
         <small
-          style={{ color: Colors.lightText }}
+          style={{ color: ColorsSystem['Space Pirate'] }}
         >{`${date} - ${readingTime} minutes read`}</small>
       </div>
     </div>

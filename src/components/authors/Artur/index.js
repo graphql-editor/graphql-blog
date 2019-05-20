@@ -3,7 +3,7 @@ export const Artur = {
   desc:
     'GraphQL passionate. Code generation guru. Short code lover. Father. CTO. CEO.',
   name: 'Artur Czemiel',
-  email: 'aexol@aexol.com',
+  email: 'artur@graphqleditor.com',
   // github: 'aexol',
   twitter: 'ACzemiel',
 }
