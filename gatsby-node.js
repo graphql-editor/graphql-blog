@@ -3,12 +3,13 @@ const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const readingTime = require('reading-time')
-const createPaginatedPages = require('gatsby-paginate')
+const createPaginatedPages = require('./plugins/pagination')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
+    const blogPostAmp = path.resolve('./src/templates/blog-post.amp.js')
     resolve(
       graphql(
         `
@@ -70,8 +71,6 @@ exports.createPages = ({ graphql, actions }) => {
           createPage: createPage,
           pageTemplate: 'src/templates/index.js',
           pageLength: 25, // This is optional and defaults to 10 if not used
-          pathPrefix: '', // This is optional and defaults to an empty string if not used
-          context: {}, // This is optional and defaults to an empty object if not used
         })
       })
     )

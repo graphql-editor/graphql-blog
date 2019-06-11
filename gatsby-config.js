@@ -49,6 +49,7 @@ module.exports = {
     },
     `gatsby-plugin-feed`,
     `json-feed`,
+    `json-feed-no-content`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -69,12 +70,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    {
-      resolve: 'gatsby-plugin-html2amp',
-      options: {
-        files: ['**/*.html'],
-        dist: 'public/amp',
-      },
-    },
   ],
 }

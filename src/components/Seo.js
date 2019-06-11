@@ -4,7 +4,6 @@ export const Seo = ({
   title,
   description,
   url,
-  ampUrl = 'https://blog.graphqleditor.com/amp/',
   lang = 'en',
   image,
   absouluteImage,
@@ -19,7 +18,6 @@ export const Seo = ({
   >
     <title>{title}</title>
     <link rel="canonical" href={url} />
-    <link rel="amphtml" href={ampUrl} />
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, " />
     <meta

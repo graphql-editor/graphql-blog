@@ -229,10 +229,10 @@ export const ColorsSystem = {
 
   /* Alien Blood */
 
-  ['Alien Blood']: 'linear-gradient(197.27deg, #0091FF 0%, #5D2EEB 98.38%);',
+  ['Alien Blood']: 'linear-gradient(197.27deg, #0091FF 0%, #5D2EEB 98.38%)',
 
   /* Space Monkeys */
 
   ['Space Monkeys']:
-    'linear-gradient(197.67deg, #0091FF -21.75%, #3E1E9F 100%);',
+    'linear-gradient(197.67deg, #0091FF -21.75%, #3E1E9F 100%)',
 }
