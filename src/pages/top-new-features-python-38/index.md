@@ -1,6 +1,6 @@
 ---
 title: Top new features in Python 3.8
-date: '2019-07-26 T11:11:00.284Z'
+date: '2019-07-26T11:11:00.284Z'
 image: cover.png
 author: Robert
 ---
