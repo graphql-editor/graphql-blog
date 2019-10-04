@@ -1,8 +1,14 @@
 import { Artur } from './Artur'
 import { Robert } from './Robert'
 import { Tomek } from './Tomek'
+import { Ola } from './Ola'
+import { Michal } from './Michal'
+import { Adrian } from './Adrian'
 export const Authors = {
   Artur,
   Robert,
-  Tomek
+  Tomek,
+  Ola,
+  Michal,
+  Adrian,
 }
