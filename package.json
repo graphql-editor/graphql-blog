@@ -34,21 +34,21 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "reading-time": "^1.2.0",
-    "typeface-lato": "0.0.54",
+    "typeface-lato": "0.0.75",
     "typestyle": "^2.0.2",
     "typography": "^0.16.19",
     "typography-theme-noriega": "^0.16.19"
   },
   "devDependencies": {
     "core-js": "^3.1.3",
-    "eslint": "^5.16.0",
+    "eslint": "^6.5.1",
     "eslint-plugin-react": "^7.13.0",
     "gh-pages": "^2.0.1",
     "gray-matter": "^4.0.2",
-    "inquirer": "^6.3.1",
+    "inquirer": "^7.0.0",
     "opn": "^6.0.0",
     "prettier": "^1.18.2",
-    "yargs": "^13.2.4"
+    "yargs": "^14.2.0"
   },
   "homepage": "https://blog.graphqleditor.com",
   "keywords": [

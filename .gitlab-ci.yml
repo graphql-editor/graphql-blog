@@ -1,0 +1,18 @@
+cache:
+  paths:
+    - node_modules
+build:
+  image: node:10
+  stage: build
+  script:
+    - npm i
+pages:
+  stage: deploy
+  image: node:10
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
