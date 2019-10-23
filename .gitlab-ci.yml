@@ -1,16 +1,15 @@
+image: node:latest
 cache:
   paths:
     - node_modules
 build:
-  image: node:10
   stage: build
   script:
-    - npm i
+    - npm install
 pages:
   stage: deploy
-  image: node:10
   script:
-    - npm run build
+    - ./node_modules/.bin/gatsby/ build --prefix-paths
   artifacts:
     paths:
       - public
