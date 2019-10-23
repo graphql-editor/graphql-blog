@@ -80,12 +80,19 @@ export class BlogPostBaseTemplate extends React.Component {
             </Link>
           </div>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+
           <h2>Speed up your GraphQL API development </h2>
           <p>
            {`The GraphQL Editor is a supportive tool for both advanced GraphQL users as well as those taking their first steps with GraphQL APIs. Our all-in-one development environment for GraphQL will help you build, manage & deploy your GraphQL API much faster thanks to dozens of built-in micro features. Its graphical interface will also fix communication within your product team. Visualization is the key!`}
         
           </p>
-          <video style={{maxWidth:"100%",margin:"auto",marginBottom:15}} loop autoPlay src={require("../../assets/pizza.mp4")} mute/>
+
           <div
             style={{
               textAlign: 'right',
@@ -100,6 +107,9 @@ export class BlogPostBaseTemplate extends React.Component {
 
             <TryItButton text={'Try it for free'} />
           </div>
+
+          <video style={{maxWidth:"100%",margin:"auto",marginBottom:15}} loop autoPlay src={require("../../assets/pizza.mp4")} mute/>
+   
           <hr
             style={{
               marginBottom: rhythm(1),
