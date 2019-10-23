@@ -9,7 +9,7 @@ build:
 pages:
   stage: deploy
   script:
-    - ./node_modules/.bin/gatsby/ build --prefix-paths
+    - ./node_modules/.bin/gatsby build --prefix-paths
   artifacts:
     paths:
       - public
