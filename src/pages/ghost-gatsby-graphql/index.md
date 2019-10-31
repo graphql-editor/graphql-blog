@@ -1,6 +1,6 @@
 ---
 title:  New Ghost 3.0 and how to use it with GraphQL (Gatsby)
-date: '2019-10-30T13:37:00.284Z'
+date: '2019-10-31T13:37:00.284Z'
 image: ghost.png
 author: Tomek
 ---
