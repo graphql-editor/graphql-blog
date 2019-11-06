@@ -1,5 +1,5 @@
 ---
-title:  Interactive GraphQL Tutorial for beginners
+title: Interactive GraphQL Tutorial for beginners
 date: '2019-11-06T14:10:00.284Z'
 image: feature.png
 author: Tomek
