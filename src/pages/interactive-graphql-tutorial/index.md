@@ -15,12 +15,11 @@ During six short lessons, you will learn the basics allowing you to start workin
 - Inputs
 - Enums
 
-Click the button below and you will be redirected to the **GraphQL Interactive tutorial**.
-
-[![GraphQL Tutorial](tutorial.png)](https://app.graphqleditor.com/?category=tutorial&visibleMenu=code)
-
+Click the button below and you will be redirected to the **GraphQL Interactive tutorial** :
 
 [![GraphQL Tutorial](button.png)](https://app.graphqleditor.com/?category=tutorial&visibleMenu=code)
+
+[![GraphQL Tutorial](tutorial.png)](https://app.graphqleditor.com/?category=tutorial&visibleMenu=code)
 
 If you are looking for more **GraphQL resources** make sure to check:
 - [GraphQL Official Documentation](https://graphql.org/learn/)
