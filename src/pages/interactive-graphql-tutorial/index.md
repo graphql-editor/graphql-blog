@@ -1,6 +1,6 @@
 ---
 title:  Interactive GraphQL Tutorial for beginners
-date: '2019-11-06T13:37:00.284Z'
+date: '2019-11-06T13:21:00.284Z'
 image: feature.png
 author: Tomek
 ---
