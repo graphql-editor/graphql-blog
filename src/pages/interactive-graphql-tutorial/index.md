@@ -5,7 +5,6 @@ image: feature.png
 author: Tomek
 ---
 
-
 If you would like to start your adventure with the [GraphQL](https://graphql.org/) but you are not sure how we have prepared a small interactive tutorial for you to familiarize yourself with basic **GraphQL syntax** and its elements.
 
 During six short lessons, you will learn the basics allowing you to start working on your first **GraphQL schema** like:
