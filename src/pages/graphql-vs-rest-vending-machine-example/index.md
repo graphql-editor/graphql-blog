@@ -7,7 +7,7 @@ author: Tomek
 
 Any **"The Office"** fans here?
 
-Do you remember the episode in which Jim put where Dwight's stuff into a vending machine? This seems to be one of the best examples of the major difference between **GraphQL vs REST** according to, one of the GraphQL’s creators, **Lee Byron**.
+Do you remember the episode in which Jim put Dwight's stuff into a vending machine? This seems to be one of the best examples of the major difference between **GraphQL vs REST** according to, one of the GraphQL’s creators, **Lee Byron**.
 
 ![The Office - vending machine prank](vending.png)  
 
