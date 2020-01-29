@@ -1,5 +1,5 @@
 export const Matt = {
-  photo: require('./Matt.jpg'),
+  photo: require('./matt.png'),
   desc: 'Heavy machines & GraphQL!',
   name: 'Matt Graff',
   email: 'matt@graphqleditor.com',
