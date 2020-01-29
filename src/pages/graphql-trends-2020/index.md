@@ -7,7 +7,7 @@ author: Matt
 
 **GraphQL has been around for a couple of years now**, steadily increasing in popularity. With more and more companies adopting this language both internally and in external uses, this query language seems to have found a permanent spot in the global development landscape.
   
-Despite all this expansion and improvement there are quite a few areas which require further work. I would like to list a few examples below.
+Despite all this expansion & improvement there are quite a few areas which require further work. I would like to list a few examples below.
 
 ## Serialization
 
