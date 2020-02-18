@@ -1,7 +1,7 @@
 export const Carl = {
   photo: require('./carl.png'),
-  desc: ' Guest blog post',
+  desc: ' Guest blog post. Want to publish you blog post on GraphQL Editor Blog? Contact us! ',
   name: 'Carl Matte',
-  email: 'hello@graphqleditor.com',
+  email: 'tomek@graphqleditor.com',
   twitter: 'graphqleditor',
 }
