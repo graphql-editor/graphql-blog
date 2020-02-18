@@ -1,7 +1,7 @@
-export const Matt = {
-  photo: require('./matt.png'),
-  desc: 'Heavy machines & GraphQL!',
-  name: 'Matt Graff',
-  email: 'matt@graphqleditor.com',
+export const Carl = {
+  photo: require('./carl.png'),
+  desc: ' Guest blog post',
+  name: 'Carl Matte',
+  email: 'hello@graphqleditor.com',
   twitter: 'graphqleditor',
 }
