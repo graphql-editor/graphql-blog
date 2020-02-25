@@ -3,10 +3,14 @@ build:
   stage: build
   script:
     - npm install
+    - ./node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+      - public
 pages:
   stage: deploy
   script:
-    - ./node_modules/.bin/gatsby build --prefix-paths
+    - echo "Hello"
   artifacts:
     paths:
       - public
