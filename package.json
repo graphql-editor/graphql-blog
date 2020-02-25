@@ -7,6 +7,7 @@
     "blog": "bin/index.js"
   },
   "dependencies": {
+    "@openfonts/fira-sans_latin": "^1.44.0",
     "auth0-js": "^9.11.3",
     "disqus-react": "^1.0.7",
     "gatsby": "^2.17.1",
@@ -34,10 +35,8 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "reading-time": "^1.2.0",
-    "typeface-lato": "0.0.75",
     "typestyle": "^2.0.4",
-    "typography": "^0.16.19",
-    "typography-theme-noriega": "^0.16.19"
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "core-js": "^3.3.3",

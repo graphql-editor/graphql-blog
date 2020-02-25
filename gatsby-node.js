@@ -34,6 +34,11 @@ exports.createPages = ({ graphql, actions }) => {
                     author
                     image {
                       name
+                      childImageSharp {
+                        fluid(maxWidth: 300) {
+                          src
+                        }
+                      }
                     }
                   }
                 }

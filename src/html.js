@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Import typefaces
-import 'typeface-lato'
+import '@openfonts/fira-sans_latin'
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>

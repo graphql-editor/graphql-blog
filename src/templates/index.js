@@ -55,8 +55,13 @@ class BlogIndex extends React.Component {
       'props.data.site.siteMetadata.description'
     )
     const canonicalUrl = get(this, 'props.location.href')
+    console.log(posts)
     return (
-      <React.Fragment>
+      <div
+        className={style({
+          background: `${ColorsSystem.Black}11`,
+        })}
+      >
         <Nav
           Twitter={{
             text:
@@ -86,22 +91,35 @@ class BlogIndex extends React.Component {
           >
             Everything about GraphQL.
           </h1>
-          {posts
-            .filter(p => p.node.frontmatter.title[0] !== '_')
-            .map(({ node }) => {
-              const title = get(node, 'frontmatter.title') || node.fields.slug
-              return (
-                <ArticleTile
-                  slug={node.fields.slug}
-                  author={node.frontmatter.author}
-                  date={node.frontmatter.date}
-                  readingTime={node.fields.readingTime}
-                  excerpt={node.excerpt}
-                  title={title}
-                  key={node.fields.slug}
-                />
-              )
+          <div
+            className={style({
+              display: 'flex',
+              flexFlow: 'row wrap',
+              justifyContent: 'center',
             })}
+          >
+            {posts
+              .filter(p => p.node.frontmatter.title[0] !== '_')
+              .map(({ node }) => {
+                const title = get(node, 'frontmatter.title') || node.fields.slug
+                return (
+                  <ArticleTile
+                    slug={node.fields.slug}
+                    author={node.frontmatter.author}
+                    date={node.frontmatter.date}
+                    readingTime={node.fields.readingTime}
+                    excerpt={node.excerpt}
+                    title={title}
+                    key={node.fields.slug}
+                    image={
+                      node.frontmatter.image &&
+                      node.frontmatter.image.childImageSharp &&
+                      node.frontmatter.image.childImageSharp.fluid.src
+                    }
+                  />
+                )
+              })}
+          </div>
           <div className={Pagination.div}>
             {!first && (
               <Link
@@ -124,7 +142,7 @@ class BlogIndex extends React.Component {
           </div>
         </Layout>
         <Footer />
-      </React.Fragment>
+      </div>
     )
   }
 }
