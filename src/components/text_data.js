@@ -1,26 +1,19 @@
-export const SlackLink =
-  'https://join.slack.com/t/graphqleditor/shared_invite/enQtNDkwOTgyOTM5OTc1LWI4YjU3N2U5NGVkNzQ2NzY5MGUxMTJiNjFlZDM1Zjc2OWRmNTI0NDM3OWUxYTk4Yjk3MzZlY2QwOWUzZmM2NDI'
-
-// ************************ Footer ************************
-
 export const footerData = [
   {
     title: 'Menu',
     links: [
-      'Services',
-      'Roadmap',
-      'Join Slack',
-      'GraphQL Blog',
+      'What is graphql?',
       'GraphQL Editor',
-      'Docs',
+      'GraphQL Blog',
+      'GraphQL Editor App',
+      'Guide',
     ],
     linksTo: [
-      'https://graphqleditor.com/services',
-      'https://graphqleditor.com/#roadmap',
-      SlackLink,
+      'https://graphqleditor.com/graphql',
+      'https://graphqleditor.com',
       'https://blog.graphqleditor.com',
       'https://app.graphqleditor.com',
-      'https://docs.graphqleditor.com',
+      'https://guide.graphqleditor.com',
     ],
   },
   {
@@ -28,12 +21,12 @@ export const footerData = [
     links: [
       'GraphQL Example #1: Fake Twitter',
       'GraphQL Example #2: Bookstore',
-      'GraphQL Example #3: Shop-E-Commerce',
+      'GraphQL Example #3: Pokemon',
     ],
     linksTo: [
-      'https://app.graphqleditor.com/showcase/fake-twitter',
-      'https://app.graphqleditor.com/showcase/library',
-      'https://app.graphqleditor.com/showcase/shop',
+      'https://app.graphqleditor.com/explore-projects/twitter',
+      'https://app.graphqleditor.com/explore-projects/library',
+      'https://app.graphqleditor.com/explore-projects/pokemon',
     ],
   },
 ]
