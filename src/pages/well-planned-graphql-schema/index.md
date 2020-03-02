@@ -1,5 +1,5 @@
 ---
-title: What can a well-planned schema do for your project?
+title: How a well-planned schema can change your project?
 date: '2020-03-01T12:00:00.284Z'
 image: "feature.png"
 author: Carl
