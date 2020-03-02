@@ -1,7 +1,7 @@
 ---
 title: What can a well-planed schema do for your project?
 date: '2020-03-01T12:00:00.284Z'
-image: "feat.png"
+image: "feature.png"
 author: Carl
 ---
 
