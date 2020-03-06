@@ -1,14 +1,14 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { BlogPostBaseTemplate } from './base/blog-post'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { BlogPostBaseTemplate } from './base/blog-post';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    return <BlogPostBaseTemplate {...this.props} />
+    return <BlogPostBaseTemplate {...this.props} />;
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -35,4 +35,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

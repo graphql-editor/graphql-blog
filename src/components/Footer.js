@@ -1,69 +1,56 @@
-import * as React from 'react'
-import { style, media } from 'typestyle'
-import { Layout } from '../components/layout'
-import { footerData } from './text_data'
-import { FooterWidget } from './FooterWidget'
-import { Colors } from '../Colors'
+import * as React from 'react';
+import { Layout } from '../components/layout';
+import { footerData } from './text_data';
+import { FooterWidget } from './FooterWidget';
+import { Colors } from '../Colors';
+import styled from '@emotion/styled';
 
-const Main = style({
-  paddingTop: 91,
-  backgroundColor: Colors.bars, //colors.footerBackground
-  width: '100%',
-  background: '#aaa',
-})
+const FooterTile = styled.footer`
+  padding-top: 90px;
+  background-color: ${Colors.bars};
+  width: 100%;
+`;
+const Widget = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20;
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
-const Widgets = style(
-  {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridGap: 20,
-  },
-  media(
-    { maxWidth: 640 },
-    {
-      gridTemplateColumns: '1fr',
+const Copy = styled.div`
+  width: 100%;
+  display: inline-block;
+  padding: 31px 0 35px;
+
+  p {
+    font-size: 14;
+    color: ${Colors.lightText};
+    letter-spacing: 1px;
+    text-align: left;
+
+    @media screen and (max-width: 576px) {
+      text-align: center;
     }
-  )
-)
-
-const Copyright = style({
-  width: '100%',
-  display: 'inline-block',
-  padding: '31px 0 35px',
-  $nest: {
-    p: {
-      fontSize: 14,
-      color: Colors.lightText,
-      letterSpacing: '1px',
-      textAlign: 'left',
-
-      '@media screen and (max-width: 576px)': {
-        textAlign: 'center',
-      },
-    },
-  },
-})
+  }
+`;
 
 export class Footer extends React.Component {
   render() {
     return (
-      <footer className={Main}>
+      <FooterTile>
         <Layout>
-          <div className={Widgets}>
-            {footerData.map((el, i) => (
-              <FooterWidget
-                key={i}
-                title={el.title}
-                links={el.links}
-                linksTo={el.linksTo}
-              />
+          <Widget>
+            {footerData.map((el) => (
+              <FooterWidget key={el.title} title={el.title} links={el.links} linksTo={el.linksTo} />
             ))}
-          </div>
-          <div className={Copyright}>
+          </Widget>
+          <Copy>
             <p>&copy; Copyright 2018 Graphqleditor.com</p>
-          </div>
+          </Copy>
         </Layout>
-      </footer>
-    )
+      </FooterTile>
+    );
   }
 }

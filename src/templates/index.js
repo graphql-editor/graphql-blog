@@ -1,80 +1,83 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import get from 'lodash/get';
+import Helmet from 'react-helmet';
 
-import { Layout } from '../components/layout'
-import { Nav } from '../components/Nav'
-import { Seo } from '../components/Seo'
-import { ArticleTile } from '../components/ArticleTile'
+import { Layout } from '../components/layout';
+import { Nav } from '../components/Nav';
+import { Seo } from '../components/Seo';
+import { ArticleTile } from '../components/ArticleTile';
 
-import { style } from 'typestyle'
-import { Colors, ColorsSystem } from '../Colors'
-import { rhythm, scale } from '../utils/typography'
-import { Footer } from '../components/Footer'
+import { ColorsSystem } from '../Colors';
+import { rhythm, scale } from '../utils/typography';
+import { Footer } from '../components/Footer';
+import styled from '@emotion/styled';
+import { css } from 'emotion';
 
-const Pagination = {
-  div: style({
-    padding: `20px 0`,
-    display: 'flex',
-    flexFlow: 'row nowrap',
-    justifyContent: 'flex-end',
-  }),
-  link: style({
-    color: ColorsSystem.Triton,
-    fontWeight: 'lighter',
-    textDecoration: 'none',
-    boxShadow: 'none',
-    letterSpacing: 2,
-    ...scale(1 / 2),
-  }),
-}
+const PaginationDiv = styled.div`
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+`;
+
+const Background = styled.div`
+  background: ${ColorsSystem.Black}11;
+`;
+
+const H1 = styled.h1`
+  padding: 0 0 ${rhythm(1.5)};
+  text-align: center;
+`;
+
+const PostsGrid = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+`;
+
+const scaled = scale(1 / 2);
+
+const PaginationLink = css`
+  color: ${ColorsSystem.Triton};
+  font-weight: lighter;
+  text-decoration: none;
+  box-shadow: none;
+  letter-spacing: 2px;
+  font-size: ${scaled.fontSize};
+  line-height: ${scaled.lineHeight};
+`;
 
 class BlogIndex extends React.Component {
   componentDidMount() {
-    this.onScroll = window.addEventListener('scroll', e => {
+    this.onScroll = window.addEventListener('scroll', () => {
       const scrollValue =
-        (document.documentElement.scrollTop + window.innerHeight) /
-        document.documentElement.scrollHeight
+        (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight;
       if (scrollValue && !this.loading) {
-        this.loading = true
+        this.loading = true;
       }
-    })
+    });
   }
+
   render() {
-    const { index, group, last, first, group: posts } = get(
-      this,
-      'props.pathContext'
-    )
-    console.log(get(this, 'props.location'))
-    const previousUrl = index - 1 === 1 ? '' : (index - 1).toString()
-    const nextUrl = (index + 1).toString()
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
-    const canonicalUrl = get(this, 'props.location.href')
-    console.log(posts)
+    const { index, last, first, group: posts } = get(this, 'props.pathContext');
+    console.log(get(this, 'props.location'));
+    const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
+    const nextUrl = (index + 1).toString();
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const siteDescription = get(this, 'props.data.site.siteMetadata.description');
+    const canonicalUrl = get(this, 'props.location.href');
+    console.log(posts);
     return (
-      <div
-        className={style({
-          background: `${ColorsSystem.Black}11`,
-        })}
-      >
+      <Background>
         <Nav
           Twitter={{
-            text:
-              'Check out this Graph QL Blog. Read about GraphQL ReactXP and other new technologies!',
+            text: 'Check out this Graph QL Blog. Read about GraphQL ReactXP and other new technologies!',
             url: 'https://blog.graphqleditor.com/',
           }}
         />
         <Layout location={this.props.location}>
-          <Seo
-            title={siteTitle}
-            description={siteDescription}
-            url={canonicalUrl}
-          />
+          <Seo title={siteTitle} description={siteDescription} url={canonicalUrl} />
           <Helmet
             meta={[
               {
@@ -83,71 +86,50 @@ class BlogIndex extends React.Component {
               },
             ]}
           />
-          <h1
-            style={{
-              textAlign: 'center',
-              padding: `0 0 ${rhythm(1.5)}`,
-            }}
-          >
-            Everything about GraphQL.
-          </h1>
-          <div
-            className={style({
-              display: 'flex',
-              flexFlow: 'row wrap',
-              justifyContent: 'center',
-            })}
-          >
+          <H1>Everything about GraphQL.</H1>
+          <PostsGrid>
             {posts
-              .filter(p => p.node.frontmatter.title[0] !== '_')
+              .filter((p) => p.node.frontmatter.title[0] !== '_')
               .map(({ node }) => {
-                const title = get(node, 'frontmatter.title') || node.fields.slug
+                const title = get(node, 'frontmatter.title') || node.fields.slug;
                 return (
                   <ArticleTile
+                    key={node.fields.slug}
                     slug={node.fields.slug}
                     author={node.frontmatter.author}
                     date={node.frontmatter.date}
                     readingTime={node.fields.readingTime}
                     excerpt={node.excerpt}
                     title={title}
-                    key={node.fields.slug}
                     image={
                       node.frontmatter.image &&
                       node.frontmatter.image.childImageSharp &&
                       node.frontmatter.image.childImageSharp.fluid.src
                     }
                   />
-                )
+                );
               })}
-          </div>
-          <div className={Pagination.div}>
+          </PostsGrid>
+          <PaginationDiv>
             {!first && (
-              <Link
-                className={Pagination.link}
-                to={previousUrl}
-                style={{ marginRight: 'auto' }}
-              >
+              <Link className={PaginationLink} to={previousUrl} style={{ marginRight: 'auto' }}>
                 ← previous
               </Link>
             )}
             {!last && (
-              <Link
-                className={Pagination.link}
-                to={nextUrl}
-                style={{ marginLeft: 'auto' }}
-              >
+              <Link className={PaginationLink} to={nextUrl} style={{ marginLeft: 'auto' }}>
                 next →
               </Link>
             )}
-          </div>
+          </PaginationDiv>
         </Layout>
         <Footer />
-      </div>
-    )
+      </Background>
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -157,11 +139,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
-      skip: 0
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10, skip: 0) {
       pageInfo {
         hasNextPage
       }
@@ -185,4 +163,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,64 +1,61 @@
-import * as React from 'react'
-import { rhythm } from '../utils/typography'
-import { UpButton } from './UpButton'
-import { HorizontalSpacer } from './HorizontalSpacer'
-import { style, media } from 'typestyle'
-import { Colors, ColorsSystem } from '../Colors'
-import { Link } from 'gatsby'
+import * as React from 'react';
+import { rhythm } from '../utils/typography';
+import { ColorsSystem } from '../Colors';
+import styled from '@emotion/styled';
+import { navigate } from 'gatsby';
 
-const Wrapper = style({
-  width: '100%',
-})
+const Wrapper = styled.div`
+  width: 100%;
+`;
 
-const Bar = style({
-  flexFlow: 'column nowrap',
-  alignItems: 'center',
-  alignContent: 'center',
-  display: 'flex',
-  padding: rhythm(1.5),
-  paddingBottom: rhythm(0.5),
-})
+const Bar = styled.div`
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  padding: ${rhythm(1.5)};
+  padding-bottom: ${rhythm(0.5)};
+`;
 
-const BlogTitle = style({
-  color: ColorsSystem['Ultrasonic'],
-  fontSize: rhythm(3),
-  fontWeight: 700,
-  marginBottom: 0,
-})
+const BlogTitle = styled.h2`
+  color: ${ColorsSystem.Ultrasonic};
+  font-size: ${rhythm(3)};
+  font-weight: 700;
+  margin-bottom: 0;
+  cursor: pointer;
+`;
 
-const Logo = style({
-  margin: 'auto',
-  textDecoration: 'none',
-  boxShadow: 'none',
-  display: 'inline-block',
-  marginBottom: rhythm(1),
-})
+const Logo = styled.a`
+  margin: auto;
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+  margin-bottom: ${rhythm(1)};
+`;
 
-const LogoImg = style({
-  margin: 0,
-  height: 50,
-  textDecoration: 'none',
-})
+const LogoImg = styled.img`
+  margin: 0;
+  height: 50px;
+  text-decoration: none;
+`;
 
 export class Nav extends React.Component {
   render() {
     return (
-      <div className={Wrapper}>
-        <div className={Bar}>
-          <a
-            href={'https://graphqleditor.com'}
-            target="_blank"
-            className={Logo}
+      <Wrapper>
+        <Bar>
+          <Logo href="https://graphqleditor.com" target="_blank">
+            <LogoImg alt="GraphQL Editor Logo" src={require('../assets/logoText.png')} />
+          </Logo>
+          <BlogTitle
+            onClick={() => {
+              navigate('/');
+            }}
           >
-            <img
-              alt="GraphQL Editor Logo"
-              src={require('../assets/logoText.png')}
-              className={LogoImg}
-            />
-          </a>
-          <h2 className={BlogTitle}>Blog</h2>
-        </div>
-      </div>
-    )
+            Blog
+          </BlogTitle>
+        </Bar>
+      </Wrapper>
+    );
   }
 }

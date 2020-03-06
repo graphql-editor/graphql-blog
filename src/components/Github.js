@@ -2,7 +2,7 @@ import * as React from 'react'
 export const Github = () => (
   <iframe
     src="https://ghbtns.com/github-btn.html?user=slothking-online&repo=graphql-blog&type=star&count=true&size=large"
-    frameborder="0"
+    frameBorder="0"
     scrolling="0"
     width="160px"
     height="30px"
@@ -16,7 +16,7 @@ export const Follow = ({ name }) => (
   <iframe
     title="githubFollow"
     src={`https://ghbtns.com/github-btn.html?user=${name}&type=follow&count=true`}
-    frameborder="0"
+    frameBorder="0"
     scrolling="0"
     width="170px"
     height="20px"

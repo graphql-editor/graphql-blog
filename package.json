@@ -7,11 +7,17 @@
     "blog": "bin/index.js"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@emotion/styled-base": "^10.0.28",
     "@openfonts/fira-sans_latin": "^1.44.0",
     "auth0-js": "^9.11.3",
     "disqus-react": "^1.0.7",
+    "emotion": "^10.0.27",
+    "emotion-server": "^10.0.27",
     "gatsby": "^2.17.1",
     "gatsby-paginate": "^1.1.1",
+    "gatsby-plugin-emotion": "^4.1.23",
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-feed-generator": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.1.23",
@@ -32,22 +38,27 @@
     "prismjs": "^1.17.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "reading-time": "^1.2.0",
-    "typestyle": "^2.0.4",
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "core-js": "^3.3.3",
-    "eslint": "^6.5.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-config-xo-space": "^0.24.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.16.0",
     "gh-pages": "^2.1.1",
     "gray-matter": "^4.0.2",
     "inquirer": "^7.0.0",
     "opn": "^6.0.0",
     "prettier": "^1.18.2",
-    "yargs": "^14.2.0"
+    "yargs": "^15.1.0"
   },
   "homepage": "https://blog.graphqleditor.com",
   "keywords": [

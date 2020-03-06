@@ -1,52 +1,48 @@
-import * as React from 'react'
-import { style } from 'typestyle'
-import { Colors } from '../Colors'
-const Main = style({
-  display: 'flex',
-  flexFlow: 'column nowrap',
-  $nest: {
-    h4: {
-      fontSize: 16,
-      color: Colors.mainText,
-      letterSpacing: '2px',
-      textTransform: 'uppercase',
-      marginBottom: 28,
-    },
+import * as React from 'react';
+import { Colors } from '../Colors';
+import styled from '@emotion/styled';
 
-    p: {
-      color: Colors.lightText,
-      marginBottom: 25,
-      letterSpacing: '1px',
-    },
+const Main = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  p {
+    color: ${Colors.lightText};
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+`;
 
-    ul: {
-      listStyle: 'none',
+const H4 = styled.h4`
+  font-size: 16px;
+  color: ${Colors.mainText};
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+`;
 
-      $nest: {
-        li: {
-          marginBottom: 14,
+const Ul = styled.ul`
+  list-style: none;
+`;
 
-          $nest: {
-            a: {
-              fontSize: 14,
-              color: Colors.lightText,
-              letterSpacing: '1px',
-            },
-          },
-        },
-      },
-    },
-  },
-})
+const Li = styled.li`
+  margin-bottom: 14px;
+`;
+
+const ALink = styled.a`
+  font-size: 14px;
+  color: ${Colors.lightText};
+  letter-spacing: 1px;
+`;
+
 export const FooterWidget = ({ title, links, linksTo }) => (
-  <div className={Main}>
-    <h4>{title}</h4>
-    <ul>
+  <Main>
+    <H4>{title}</H4>
+    <Ul>
       {links.map((el, i) => (
-        <li key={i}>
-          <a href={linksTo[i]}>{el}</a>
-        </li>
+        <Li key={el}>
+          <ALink href={linksTo[i]}>{el}</ALink>
+        </Li>
       ))}
-    </ul>
-  </div>
-)
+    </Ul>
+  </Main>
+);

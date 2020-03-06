@@ -1,5 +1,5 @@
 import * as React from 'react'
-export const HorizontalSpacer = ({v}) => (
+export const HorizontalSpacer = ({ v }) => (
   <span
     style={{
       width: v,

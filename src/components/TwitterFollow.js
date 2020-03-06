@@ -1,17 +1,23 @@
-import * as React from 'react'
+import * as React from 'react';
 import { rhythm } from '../utils/typography';
+import styled from '@emotion/styled';
+
+const ATile = styled.a`
+  box-shadow: none;
+  display: inline-flex;
+`;
+
+const Badge = styled.img`
+  margin: 0px;
+  height: ${rhythm(3 / 4)};
+  box-shadow: none;
+`;
+
 export const TwitterFollow = ({ name }) => (
-  <a
-    style={{
-      boxShadow: 'none',
-      display: 'inline-flex',
-    }}
-    href={`https://twitter.com/intent/follow?screen_name=${name}`}
-  >
-    <img
+  <ATile href={`https://twitter.com/intent/follow?screen_name=${name}`}>
+    <Badge
       alt="Twitter Shield"
       src={`https://img.shields.io/twitter/follow/${name}.svg?label=Follow ${name}&style=social`}
-      style={{ margin: 0, height: rhythm(3/4), boxShadow: 'none' }}
     />
-  </a>
-)
+  </ATile>
+);

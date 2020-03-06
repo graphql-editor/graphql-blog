@@ -8,231 +8,230 @@ export const Colors = {
   bars: '#fcfcfc',
 }
 export const ColorsSystem = {
-  /* Black*/
+  /* Black */
 
-  ['Black']: '#000000',
+  Black: '#000000',
 
   /* White */
 
-  ['White']: '#FFFFFF',
+  White: '#FFFFFF',
   /* Damsel */
 
-  ['Damsel in distress']: '#E1E0FF',
+  'Damsel in distress': '#E1E0FF',
 
   /* Mora */
 
-  ['Mora']: '#A9A5FF',
+  Mora: '#A9A5FF',
 
   /* Super Nova */
 
-  ['Super Nova']: '#645EE1',
+  'Super Nova': '#645EE1',
 
   /* Ultrasonic */
 
-  ['Ultrasonic']: '#4A45B9',
+  Ultrasonic: '#4A45B9',
 
   /* Pinoneer */
 
-  ['Pioneer']: '#343096',
+  Pioneer: '#343096',
 
   /* Unknown */
 
-  ['Unknown']: '#050254',
+  Unknown: '#050254',
 
   /* Foggy */
 
-  ['Foggy']: '#DFE6F7',
+  Foggy: '#DFE6F7',
 
   /* Lunatic */
 
-  ['Lunatic']: '#4168FF',
+  Lunatic: '#4168FF',
 
   /* Infinito */
 
-  ['Infinito']: '#1844ED',
+  Infinito: '#1844ED',
 
   /* Gravity */
 
-  ['Gravity']: '#1539C6',
+  Gravity: '#1539C6',
 
   /* Outer Space */
 
-  ['Outer Space']: '#061241',
+  'Outer Space': '#061241',
 
   /* Ozone Layer */
 
-  ['Ozone Layer']: '#E1F3FF',
+  'Ozone Layer': '#E1F3FF',
 
   /* Pacific */
 
-  ['Pacific']: '#359FFB',
+  Pacific: '#359FFB',
 
   /* Space Pirate */
 
-  ['Space Pirate']: '#008BF5',
+  'Space Pirate': '#008BF5',
 
   /* Bored Martian */
 
-  ['Bored Martian']: '#0D74C2',
+  'Bored Martian': '#0D74C2',
 
   /* The Nothing */
 
-  ['The Nothing']: '#012744',
+  'The Nothing': '#012744',
 
   /* Cloud 13 */
 
-  ['Cloud 13']: '#CCFFFC',
+  'Cloud 13': '#CCFFFC',
 
   /* Triton */
 
-  ['Triton']: '#51E1D8',
+  Triton: '#51E1D8',
 
   /* Summer Triangle */
 
-  ['Summer Triangle']: '#38C1B8',
+  'Summer Triangle': '#38C1B8',
 
   /* Inspector */
 
-  ['Inspector']: '#04A197',
+  Inspector: '#04A197',
 
   /* Deep Green */
 
-  ['Deep Green']: '#01312E',
+  'Deep Green': '#01312E',
 
   /* Plutonic Briza */
 
-  ['Plutonic Briza']: '#E3FFEB',
+  'Plutonic Briza': '#E3FFEB',
 
   /* Cooler */
 
-  ['Cooler']: '#56DA67',
+  Cooler: '#56DA67',
 
   /* Serpentine */
 
-  ['Serpentine']: '#10C642',
+  Serpentine: '#10C642',
 
   /* Kriptonita */
 
-  ['Kriptonita']: '#0BA134',
+  Kriptonita: '#0BA134',
 
   /* Zubr */
 
-  ['Zubr']: '#01270B',
+  Zubr: '#01270B',
 
   /* Captain Parrot */
 
-  ['Captain Parrot']: '#FFF6D5',
+  'Captain Parrot': '#FFF6D5',
 
   /* Venus */
 
-  ['Venus']: '#EAC819',
+  Venus: '#EAC819',
 
   /* Fireball */
 
-  ['Fireball']: '#D4AD25',
+  Fireball: '#D4AD25',
 
   /* Collysion */
 
-  ['Collysion']: '#A38311',
+  Collysion: '#A38311',
 
   /* Syndrom */
 
-  ['Syndrom']: '#473803',
+  Syndrom: '#473803',
 
   /* Cotton Candy */
 
-  ['Cotton Candy']: '#FFE7EB',
+  'Cotton Candy': '#FFE7EB',
 
   /* Muse */
 
-  ['Muse']: '#FF5E6C',
+  Muse: '#FF5E6C',
 
   /* Cherry Bomb */
 
-  ['Cherry Bomb']: '#F9193F',
+  'Cherry Bomb': '#F9193F',
 
   /* ACME */
 
-  ['ACME']: '#D11031',
+  ACME: '#D11031',
 
   /* Dry Blood */
 
-  ['Dry Blood']: '#43030E',
+  'Dry Blood': '#43030E',
 
   /* Mutant Peach */
 
-  ['Mutant Peach']: '#FFD9CD',
+  'Mutant Peach': '#FFD9CD',
 
   /* Floating Mandarines */
 
-  ['Floating Mandarines']: '#FB6B3D',
+  'Floating Mandarines': '#FB6B3D',
 
   /* No Name */
 
-  ['No Name']: '#E45021',
+  'No Name': '#E45021',
 
   /* Flying Tomatoes */
 
-  ['Flying Tomatoes']: '#A52E08',
+  'Flying Tomatoes': '#A52E08',
 
   /* I Need Coffee */
 
-  ['I Need Coffee']: '#461303',
+  'I Need Coffee': '#461303',
 
   /* Meteor */
 
-  ['Meteor']: '#FFE3C8',
+  Meteor: '#FFE3C8',
 
   /* Mars */
 
-  ['Mars']: '#F19037',
+  Mars: '#F19037',
 
   /* Rising Embers */
 
-  ['Rising Embers']: '#E57C1A',
+  'Rising Embers': '#E57C1A',
 
   /* Helix Nebula */
 
-  ['Helix Nebula']: '#C36106',
+  'Helix Nebula': '#C36106',
 
   /* Laika */
 
-  ['Laika']: '#3F1F01',
+  Laika: '#3F1F01',
 
   /* Black Hole */
 
-  ['Black Hole']: '#25222E',
+  'Black Hole': '#25222E',
 
   /* Dark Side */
 
-  ['Dark Side']: '#313132',
+  'Dark Side': '#313132',
 
   /* Androgyn */
 
-  ['Androgyn']: '#4B4B4C',
+  Androgyn: '#4B4B4C',
 
   /* Acient Stone */
 
-  ['Ancient Stone']: '#757575',
+  'Ancient Stone': '#757575',
 
   /* Ashes */
 
-  ['Ashes']: '#999DA0',
+  Ashes: '#999DA0',
 
   /* Sopel */
 
-  ['Sopel']: '#D9E0E1',
+  Sopel: '#D9E0E1',
 
   /* Lead */
 
-  ['Lead']: '#514E5A',
+  Lead: '#514E5A',
 
   /* Alien Blood */
 
-  ['Alien Blood']: 'linear-gradient(197.27deg, #0091FF 0%, #5D2EEB 98.38%)',
+  'Alien Blood': 'linear-gradient(197.27deg, #0091FF 0%, #5D2EEB 98.38%)',
 
   /* Space Monkeys */
 
-  ['Space Monkeys']:
-    'linear-gradient(197.67deg, #0091FF -21.75%, #3E1E9F 100%)',
+  'Space Monkeys': 'linear-gradient(197.67deg, #0091FF -21.75%, #3E1E9F 100%)',
 }

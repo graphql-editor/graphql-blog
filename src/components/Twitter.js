@@ -1,19 +1,20 @@
-import * as React from 'react'
+import * as React from 'react';
+import styled from '@emotion/styled';
+
+const ATile = styled.a`
+  box-shadow: none;
+  display: inline-flex;
+  margin-right: 10px;
+`;
+
+const Badge = styled.img`
+  margin: 0px;
+  height: 30px;
+  box-shadow: 'none';
+`;
+
 export const Twitter = ({ text, url }) => (
-  <a
-    style={{
-      boxShadow: 'none',
-      display: 'inline-flex',
-      marginRight: 10,
-    }}
-    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      text
-    )}&url=${url}`}
-  >
-    <img
-      alt="Twitter Shield"
-      src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"
-      style={{ margin: 0, height: 30, boxShadow: 'none' }}
-    />
-  </a>
-)
+  <ATile href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`}>
+    <Badge alt="Twitter Shield" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" />
+  </ATile>
+);

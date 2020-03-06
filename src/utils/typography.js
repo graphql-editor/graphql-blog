@@ -1,5 +1,4 @@
-import Typography from 'typography'
-import { ColorsSystem } from '../Colors'
+import Typography from 'typography';
 
 const typography = new Typography({
   title: 'Firas',
@@ -11,12 +10,12 @@ const typography = new Typography({
   headerWeight: 700,
   boldWeight: 700,
   scaleRatio: 1.618,
-})
+});
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
-  typography.injectStyles()
+  typography.injectStyles();
 }
 
-export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
+export default typography;
+export const { rhythm } = typography;
+export const { scale } = typography;
