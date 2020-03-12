@@ -151,7 +151,7 @@ export class BlogPostBaseTemplate extends React.Component {
               <TryItButton text="Try it for free" />
             </TryItContainer>
 
-            <PromoVideo loop autoPlay mute src={require('../../assets/pizza.mp4')} />
+            <PromoVideo loop autoPlay mute src={require('../../assets/pizza-2.mp4')} />
 
             <HorizontalLine />
             <Bio author={post.frontmatter.author} />
