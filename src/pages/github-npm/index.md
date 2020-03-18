@@ -20,6 +20,10 @@ npm is definitely an interesting acquisition target for a tech giant like Micros
 
 It's really difficult to assess. The web communities are full of mixed opinions. Some of the users are feeling enthusiastic about the acquisition, showing as an example that GitHub is doing really great since being acquired by Microsoft or that the npm company is in a mess and this acquisition could possibly put the back on the right track by having such organization as GitHub as a partner. 
 
-On the other hand, are people that think that this could be harmful to the software ecosystem as the acquisition means that some of the core elements of the NODE ecosystem being own by such giants as Microsoft could be a threat.
+On the other hand, are people that think that this could be harmful to the software ecosystem as the acquisition means that some of the core elements of the NODE ecosystem being own by such giants as Microsoft could be a threat, which seems to worry an open-source community:
+
+![Donald Stufft's tweet about PyPi package](pypi.png)
+##### Source: [@dstufft](https://twitter.com/dstufft)
+
 
 Is it a good or bad thing? Should we be worried or excited? What are your thoughts?
