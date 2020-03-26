@@ -11,7 +11,7 @@ The Guild is an open-source group focused on enabling developers to maximize the
 - GraphQL Inspector
 - GraphQL-CLI
 
-and some more useful packages.
+and other useful packages.
 
 A couple of days ago the Guild revealed their latest project - **[GraphQL Mesh](https://github.com/Urigo/graphql-mesh)**.
 
