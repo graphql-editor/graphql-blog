@@ -1,6 +1,6 @@
 ---
 title: GraphQL Mesh by the Guild
-date: '2020-03-03T13:37:00.284Z'
+date: '2020-03-263T13:37:00.284Z'
 image: feat_mesh.png
 author: Tomek
 ---
