@@ -1,7 +1,7 @@
 ---
-title: GraphQL Mesh by the Guild
-date: '2020-03-273T11:37:00.284Z'
-image: feat_mesh1.png
+title: GraphQL Mesh
+date: '2020-03-273T10:01:00.284Z'
+image: feat_m.png
 author: Tomek
 ---
 
@@ -11,16 +11,14 @@ The Guild is an open-source group focused on enabling developers to maximize the
 - GraphQL Inspector
 - GraphQL-CLI
 
-and other useful packages.
-
-A couple of days ago the Guild revealed their latest project - **[GraphQL Mesh](https://github.com/Urigo/graphql-mesh)**.
+and other useful packages. A couple of days ago the Guild revealed their latest project - **[GraphQL Mesh](https://github.com/Urigo/graphql-mesh)**.
 
 
 ## GraphQL Mesh
 
 I believe this library may solve one of the most important issues standing in the way of global GraphQL adoption which is a fear of the unknown. The reason many developers haven't decided to try GraphQL is some uncertainty about the possible implementation issues that might arise during the transition process, with GraphQL Mesh you can easily use GraphQL specification with legacy API services!
 
-![GraphQL Mesh](mesh1.png)
+![GraphQL Mesh](gql_m.png)
 ##### Source: [Medium/The-Guild](https://medium.com/the-guild/graphql-mesh-query-anything-run-anywhere-433c173863b5)
 
 
