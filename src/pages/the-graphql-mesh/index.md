@@ -1,6 +1,6 @@
 ---
 title: GraphQL Mesh
-date: '2020-03-273T10:01:00.284Z'
+date: '2020-03-27T10:01:00.284Z'
 image: feat_m.png
 author: Tomek
 ---
