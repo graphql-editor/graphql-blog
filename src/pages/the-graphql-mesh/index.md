@@ -1,7 +1,7 @@
 ---
 title: GraphQL Mesh by the Guild
-date: '2020-03-273T13:37:00.284Z'
-image: feat_mesh.png
+date: '2020-03-273T11:37:00.284Z'
+image: feat_mesh1.png
 author: Tomek
 ---
 
@@ -20,7 +20,7 @@ A couple of days ago the Guild revealed their latest project - **[GraphQL Mesh](
 
 I believe this library may solve one of the most important issues standing in the way of global GraphQL adoption which is a fear of the unknown. The reason many developers haven't decided to try GraphQL is some uncertainty about the possible implementation issues that might arise during the transition process, with GraphQL Mesh you can easily use GraphQL specification with legacy API services!
 
-![GraphQL Mesh](mesh.png)
+![GraphQL Mesh](mesh1.png)
 ##### Source: [Medium/The-Guild](https://medium.com/the-guild/graphql-mesh-query-anything-run-anywhere-433c173863b5)
 
 
