@@ -1,18 +1,11 @@
-image: node:latest
-build:
-  stage: build
+image: node:10
+pages:
+  only:
+    - master
+  stage: deploy
   script:
     - npm install
     - ./node_modules/.bin/gatsby build --prefix-paths
   artifacts:
     paths:
       - public
-pages:
-  stage: deploy
-  script:
-    - echo "Hello"
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
