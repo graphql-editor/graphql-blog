@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import { Layout } from '../components/layout';
 import { Nav } from '../components/Nav';
+import { SubscribeBanner } from '../components/SubscribeBanner';
 import { Seo } from '../components/Seo';
 import { ArticleTile } from '../components/ArticleTile';
 
@@ -26,11 +27,16 @@ const Background = styled.div`
 `;
 
 const H1 = styled.h1`
-  padding: 0 0 ${rhythm(1.5)};
+  margin: 38px auto;
   text-align: center;
+  @media(min-width:777px){
+    display:none;
+  }
 `;
 
 const PostsGrid = styled.div`
+  margin:0px;
+  padding-top:0px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -86,10 +92,41 @@ class BlogIndex extends React.Component {
               },
             ]}
           />
-          <H1>Everything about GraphQL.</H1>
+          <H1>GraphQL Blog</H1>
+          {
+              window.innerWidth > 776 &&
+              <SubscribeBanner/>
+          }
           <PostsGrid>
             {posts
               .filter((p) => p.node.frontmatter.title[0] !== '_')
+              .splice(0,1)
+              .map(({ node }) => {
+                const title = get(node, 'frontmatter.title') || node.fields.slug;
+                return (
+                  <ArticleTile
+                    key={node.fields.slug}
+                    slug={node.fields.slug}
+                    author={node.frontmatter.author}
+                    date={node.frontmatter.date}
+                    readingTime={node.fields.readingTime}
+                    excerpt={node.excerpt}
+                    title={title}
+                    image={
+                      node.frontmatter.image &&
+                      node.frontmatter.image.childImageSharp &&
+                      node.frontmatter.image.childImageSharp.fluid.src
+                    }
+                  />
+                );
+              })}
+            {
+              window.innerWidth < 776 &&
+              <SubscribeBanner/>
+            }
+            {posts
+              .filter((p) => p.node.frontmatter.title[0] !== '_')
+              .splice(1,999)
               .map(({ node }) => {
                 const title = get(node, 'frontmatter.title') || node.fields.slug;
                 return (

@@ -9,7 +9,9 @@ import { css } from 'emotion';
 
 const TileMain = styled.div`
   margin: ${rhythm(0.5)};
-  width: 320px;
+  margin-top: 0;
+  margin-bottom: ${rhythm(1)};
+  width: 343px;
   background: ${ColorsSystem.White};
   border-radius: 10px;
   display: flex;
@@ -19,6 +21,11 @@ const TileMain = styled.div`
   transition: 0.25s border-color;
   &:hover {
     border: 1px solid ${ColorsSystem.Ultrasonic};
+  }
+  @media(min-width:777px){
+    &:first-child {
+      width: 716px;
+    }
   }
 `;
 

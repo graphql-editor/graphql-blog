@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link,  navigate } from 'gatsby';
 import get from 'lodash/get';
 
 import Bio from '../../components/Bio';
 import { Layout } from '../../components/layout';
 import { rhythm, scale } from '../../utils/typography';
-import { Nav } from '../../components/Nav';
+import { Nav } from '../../components/NavPost';
 import { DiscussionEmbed } from 'disqus-react';
 import { Sider } from '../../components/Sider';
 import { Seo } from '../../components/Seo';
@@ -17,36 +17,43 @@ import { css } from 'emotion';
 
 const scaled = scale(-1 / 2);
 
-const BackButton = css`
-  margin-right: ${rhythm(1)};
-  color: ${ColorsSystem.Ashes};
-  font-size: ${scaled.fontSize};
-  line-height: ${scaled.lineHeight};
-`;
-
 const Wrapper = styled.div`
-  max-width: ${rhythm(24)};
+  width: 343px;
   margin: auto;
+  @media(min-width:777px){
+    margin-top: 72px;
+    width: 624px;
+  }
+  @media(min-width:1150px){
+    margin-top: 150px;
+    width: 1080px;
+  }
 `;
-
+const BtnBack = styled.img `
+  position: absolute;
+  top: 82px;
+  left:0;
+  margin: 0;
+  height: 36px;
+  cursor:pointer;
+  @media(max-width:777px){
+    display:none;
+  }
+`;
 const DateFont = scale(-1 / 5);
 const AuthorDate = styled.div`
+  margin-bottom: 30px;
   display: block;
   text-align: center;
   color: ${ColorsSystem['Space Pirate']};
-  margin-bottom: 0px;
   font-size: ${DateFont.fontSize};
   line-height: ${DateFont.lineHeight};
 `;
 
 const PostTitle = styled.h1`
+  margin-top: 28px;
   text-align: center;
   margin-bottom: ${rhythm(1 / 2)};
-`;
-
-const PostBack = styled.div`
-  text-align: center;
-  margin-bottom: ${rhythm(1)};
 `;
 
 const TryItContainer = styled.div`
@@ -117,6 +124,7 @@ export class BlogPostBaseTemplate extends React.Component {
           }}
         />
         <Layout location={this.props.location}>
+          <BtnBack alt="GraphQL Editor Arrow to homepage" src={require('../../assets/arrow-back.png')} onClick={() => { navigate('/');}} />
           <Wrapper>
             <Seo
               title={`${post.frontmatter.title} | ${siteTitle}`}
@@ -131,11 +139,6 @@ export class BlogPostBaseTemplate extends React.Component {
             />
             <PostTitle>{post.frontmatter.title}</PostTitle>
             <AuthorDate>{`${post.frontmatter.date} by ${post.frontmatter.author}`}</AuthorDate>
-            <PostBack>
-              <Link to="/" className={BackButton}>
-                ← back to blog
-              </Link>
-            </PostBack>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
             <HorizontalLine />
 
