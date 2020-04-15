@@ -19,6 +19,7 @@ const TileMain = styled.div`
   cursor: pointer;
   border: 1px solid transparent;
   transition: 0.25s border-color;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   &:hover {
     border: 1px solid ${ColorsSystem.Ultrasonic};
   }

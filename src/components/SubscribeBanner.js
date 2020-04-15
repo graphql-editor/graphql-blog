@@ -57,6 +57,7 @@ const Wrapper = styled.div `
     height: 251px;
     width: 100%;
     max-width: 340px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
     @media(min-width:777px){
         margin:32px auto ${rhythm(1)};
         height: 146px;
@@ -211,6 +212,9 @@ export class SubscribeBanner extends React.Component {
   }
 
   render(){
+    window.onresize = function (event) {
+      document.location.reload(true);
+    }
 
      if (this.state.subscribed) {
       return (

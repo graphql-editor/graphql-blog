@@ -59,8 +59,8 @@ const TryGraphQlBtn = styled.div`
   padding:5px 10px;
   border-radius: 4px;
   cursor:pointer;
-  @media screen and(min-width: 1440px) {
-     padding:5px 14px;
+  @media (min-width: 1150px) {
+     padding:5px 18px;
   }
 `;
 
