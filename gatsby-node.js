@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                     image {
                       name
                       childImageSharp {
-                        fluid(maxWidth: 300) {
+                        fluid(maxWidth: 700) {
                           src
                         }
                       }
