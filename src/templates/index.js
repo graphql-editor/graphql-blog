@@ -10,7 +10,7 @@ import { Seo } from '../components/Seo';
 import { ArticleTile } from '../components/ArticleTile';
 
 import { ColorsSystem } from '../Colors';
-import { rhythm, scale } from '../utils/typography';
+import { scale } from '../utils/typography';
 import { Footer } from '../components/Footer';
 import styled from '@emotion/styled';
 import { css } from 'emotion';
