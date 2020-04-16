@@ -1,49 +1,48 @@
-const path = require('path')
-const { defaultOptions, runQuery, writeFile } = require('./internals')
+const path = require('path');
+const { defaultOptions, runQuery, writeFile } = require('./internals');
 
-const publicPath = './public'
+const publicPath = './public';
 
 exports.onPostBuild = async ({ graphql }, pluginOptions) => {
-  delete pluginOptions.plugins
+  delete pluginOptions.plugins;
   const options = {
     ...defaultOptions,
     ...pluginOptions,
-  }
+  };
 
-  const siteQuery = await runQuery(graphql, options.siteQuery)
+  const siteQuery = await runQuery(graphql, options.siteQuery);
 
   const {
     site: {
       siteMetadata: { title, description, siteUrl, author },
     },
-  } = siteQuery
+  } = siteQuery;
 
-  const feedQuery = await runQuery(graphql, options.feedQuery)
+  const feedQuery = await runQuery(graphql, options.feedQuery);
 
   const {
     allMarkdownRemark: { edges: data },
-  } = feedQuery
-  const items = data.map(i => {
+  } = feedQuery;
+  const items = data.map((i) => {
     const {
       node: {
         frontmatter,
         fields: { slug },
       },
-    } = i
+    } = i;
     return {
       id: `${siteUrl}${slug}`,
       url: `${siteUrl}${slug}`,
       title: frontmatter.title,
       date_published: new Date(frontmatter.date).toISOString(),
       date_modified: new Date(frontmatter.date).toISOString(),
-    }
-  })
+    };
+  });
   if (options.json) {
-    console.log('Generating JSON without content feed')
     const jsonFeed = {
       version: 'https://jsonfeed.org/version/1',
-      title: title,
-      description: description,
+      title,
+      description,
       home_page_url: siteUrl,
       feed_url: `${siteUrl}/feed-nocontent.json`,
       user_comment:
@@ -52,15 +51,12 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
       author: {
         name: author,
       },
-      items: items,
-    }
-    await writeFile(
-      path.join(publicPath, 'feed-nocontent.json'),
-      JSON.stringify(jsonFeed),
-      'utf8'
-    ).catch(r => {
-      console.log('Failed to write JSON Feed file: ', r)
-    })
+      items,
+    };
+    await writeFile(path.join(publicPath, 'feed-nocontent.json'), JSON.stringify(jsonFeed), 'utf8').catch((r) => {
+      console.log('Failed to write JSON Feed file: ', r);
+    });
   }
-  return Promise.resolve()
-}
+
+  return Promise.resolve();
+};

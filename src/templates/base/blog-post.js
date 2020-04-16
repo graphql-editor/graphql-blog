@@ -106,7 +106,6 @@ export class BlogPostBaseTemplate extends React.Component {
       ? `${post.frontmatter.image.publicURL}`
       : `${require('../../assets/graphql-header.jpg')}`;
     const { previous, next } = this.props.pageContext;
-    console.log(post);
     return (
       <>
         <Sider
