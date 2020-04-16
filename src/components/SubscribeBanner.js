@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { rhythm } from '../utils/typography';
+import { Gql } from '../graphql-zeus';
 
 const activeTheme = 1;
 
@@ -110,7 +111,7 @@ const Bolder = styled.span`
   font-weight: bold;
 `;
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   margin: 0;
   width: 100%;
   @media (min-width: 777px) {
@@ -194,93 +195,90 @@ const ThankYou = styled.div`
   }
 `;
 
-export class SubscribeBanner extends React.Component {
-  state = {
+export const SubscribeBanner = () => {
+  const [state, setState] = useState({
     value: '',
     subscribed: false,
-  };
+  });
 
-  componentDidMount() {
+  useEffect(() => {
     const isUserSubscribed = window.localStorage.getItem('subscribed');
     if (isUserSubscribed) {
-      this.setState({
+      setState({
         subscribed: true,
       });
     }
-  }
-
-  render() {
-    if (this.state.subscribed) {
-      return (
-        <ThankYou version={theme[activeTheme].bgColor}>
-          <H4 version={theme[activeTheme].color}>Thank you for subscribing!</H4>
-        </ThankYou>
-      );
-    }
-
+  }, []);
+  if (state.subscribed) {
     return (
-      <Wrapper version={theme[activeTheme].bgColor}>
-        <TextBox>
-          <H4 version={theme[activeTheme].color}>
-            {window.innerWidth < 777 && 'Choose succes!'}
-            {window.innerWidth > 776 && 'Feed your brain!'}
-          </H4>
-          {window.innerWidth < 776 && (
-            <Disc version={theme[activeTheme].color}>
-              Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
-            </Disc>
-          )}
-          {window.innerWidth > 776 && (
-            <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>
-          )}
-        </TextBox>
-        <StyledForm
-          ref={(ref) => {
-            if (ref) {
-              this.form = ref;
-            }
-          }}
-          action="https://online.us18.list-manage.com/subscribe/post?u=cff73d572350c30e7c497c973&amp;id=3adcea78e1"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          className="validate"
-          target="_blank"
-        >
-          <EmailInput
-            placeholder="email@somemail.com"
-            name="EMAIL"
-            value={this.state.value}
-            onChange={(e) => {
-              this.setState({
-                value: e.target.value,
-              });
-            }}
-          />
-          <SubBtn
-            version={theme[activeTheme].btnColor}
-            onClick={() => {
-              if (this.state.value.match('@')) {
-                window.localStorage.setItem('subscribed', 'subscribed');
-                this.setState({ subscribed: true });
-                this.form.submit();
-              }
-            }}
-          >
-            {' '}
-            Keep Informed
-          </SubBtn>
-        </StyledForm>
-        {window.innerWidth > 776 && (
-          <MailBox
-            height={theme[activeTheme].mbHeight}
-            right={theme[activeTheme].mbRight}
-            top={theme[activeTheme].mbTop}
-            src={theme[activeTheme].mailBox}
-            alt="Mailbox icon"
-          />
-        )}
-      </Wrapper>
+      <ThankYou version={theme[activeTheme].bgColor}>
+        <H4 version={theme[activeTheme].color}>Thank you for subscribing!</H4>
+      </ThankYou>
     );
   }
-}
+
+  return (
+    <Wrapper version={theme[activeTheme].bgColor}>
+      <TextBox>
+        <H4 version={theme[activeTheme].color}>
+          {window.innerWidth < 777 && 'Choose success!'}
+          {window.innerWidth > 776 && 'Feed your brain!'}
+        </H4>
+        {window.innerWidth < 776 && (
+          <Disc version={theme[activeTheme].color}>
+            Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
+          </Disc>
+        )}
+        {window.innerWidth > 776 && (
+          <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>
+        )}
+      </TextBox>
+      <StyledForm>
+        <EmailInput
+          placeholder="email@somemail.com"
+          name="EMAIL"
+          value={state.value}
+          onChange={(e) => {
+            setState({
+              ...state,
+              value: e.target.value,
+            });
+          }}
+        />
+        <SubBtn
+          version={theme[activeTheme].btnColor}
+          onClick={() => {
+            if (state.value.match('@')) {
+              Gql.query({
+                sendgrid: {
+                  addMember: [
+                    {
+                      memberEmail: state.value,
+                    },
+                    true,
+                  ],
+                },
+              }).then((response) => {
+                if (response.sendgrid && response.sendgrid.addMember) {
+                  window.localStorage.setItem('subscribed', 'subscribed');
+                  setState({ ...state, subscribed: true });
+                }
+              });
+            }
+          }}
+        >
+          Keep Informed
+        </SubBtn>
+      </StyledForm>
+      {window.innerWidth > 776 && (
+        <MailBox
+          height={theme[activeTheme].mbHeight}
+          right={theme[activeTheme].mbRight}
+          top={theme[activeTheme].mbTop}
+          src={theme[activeTheme].mailBox}
+          alt="Mailbox icon"
+        />
+      )}
+    </Wrapper>
+  );
+};

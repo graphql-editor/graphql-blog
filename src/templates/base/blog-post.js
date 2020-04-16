@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,  navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import get from 'lodash/get';
 
 import Bio from '../../components/Bio';
@@ -15,29 +15,27 @@ import { TryItButton } from '../../components/TryItButton';
 import styled from '@emotion/styled';
 import { css } from 'emotion';
 
-const scaled = scale(-1 / 2);
-
 const Wrapper = styled.div`
   width: 343px;
   margin: auto;
-  @media(min-width:777px){
+  @media (min-width: 777px) {
     margin-top: 72px;
     width: 624px;
   }
-  @media(min-width:1150px){
+  @media (min-width: 1150px) {
     margin-top: 150px;
     width: 1080px;
   }
 `;
-const BtnBack = styled.img `
+const BtnBack = styled.img`
   position: absolute;
   top: 82px;
-  left:0;
+  left: 0;
   margin: 0;
   height: 36px;
-  cursor:pointer;
-  @media(max-width:777px){
-    display:none;
+  cursor: pointer;
+  @media (max-width: 777px) {
+    display: none;
   }
 `;
 const DateFont = scale(-1 / 5);
@@ -124,7 +122,13 @@ export class BlogPostBaseTemplate extends React.Component {
           }}
         />
         <Layout location={this.props.location}>
-          <BtnBack alt="GraphQL Editor Arrow to homepage" src={require('../../assets/arrow-back.png')} onClick={() => { navigate('/');}} />
+          <BtnBack
+            alt="GraphQL Editor Arrow to homepage"
+            src={require('../../assets/arrow-back.png')}
+            onClick={() => {
+              navigate('/');
+            }}
+          />
           <Wrapper>
             <Seo
               title={`${post.frontmatter.title} | ${siteTitle}`}
