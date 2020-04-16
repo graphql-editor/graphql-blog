@@ -1,6 +1,6 @@
 ---
 title:  GraphQLize - generate GraphQL API from PostgreSQL/MySQL databases
-date: '2020-04-13T13:37:00.284Z'
+date: '2020-04-16T13:37:00.284Z'
 image: graphqlize_feat.png
 author: Tomek
 ---
