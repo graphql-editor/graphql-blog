@@ -93,6 +93,7 @@ const PromoVideo = styled.video`
   max-width: 100%;
   margin: auto;
   margin-bottom: 15px;
+  display: block;
 `;
 
 export class BlogPostBaseTemplate extends React.Component {

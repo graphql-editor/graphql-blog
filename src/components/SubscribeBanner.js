@@ -194,6 +194,10 @@ const ThankYou = styled.div`
     max-width: 1085px;
   }
 `;
+let browserWindow = { innerWidth: 1200 };
+if (typeof window !== `undefined`) {
+  browserWindow = window;
+}
 
 export const SubscribeBanner = () => {
   const [state, setState] = useState({
@@ -215,21 +219,21 @@ export const SubscribeBanner = () => {
         <H4 version={theme[activeTheme].color}>Thank you for subscribing!</H4>
       </ThankYou>
     );
-  }
+  } // Wrap the require in check for window
 
   return (
     <Wrapper version={theme[activeTheme].bgColor}>
       <TextBox>
         <H4 version={theme[activeTheme].color}>
-          {window.innerWidth < 777 && 'Choose success!'}
-          {window.innerWidth > 776 && 'Feed your brain!'}
+          {browserWindow.innerWidth < 777 && 'Choose success!'}
+          {browserWindow.innerWidth > 776 && 'Feed your brain!'}
         </H4>
-        {window.innerWidth < 776 && (
+        {browserWindow.innerWidth < 776 && (
           <Disc version={theme[activeTheme].color}>
             Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
           </Disc>
         )}
-        {window.innerWidth > 776 && (
+        {browserWindow.innerWidth > 776 && (
           <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>
         )}
       </TextBox>
@@ -260,7 +264,7 @@ export const SubscribeBanner = () => {
                 },
               }).then((response) => {
                 if (response.sendgrid && response.sendgrid.addMember) {
-                  window.localStorage.setItem('subscribed', 'subscribed');
+                  browserWindow.localStorage.setItem('subscribed', 'subscribed');
                   setState({ ...state, subscribed: true });
                 }
               });
@@ -270,7 +274,7 @@ export const SubscribeBanner = () => {
           Keep Informed
         </SubBtn>
       </StyledForm>
-      {window.innerWidth > 776 && (
+      {browserWindow.innerWidth > 776 && (
         <MailBox
           height={theme[activeTheme].mbHeight}
           right={theme[activeTheme].mbRight}

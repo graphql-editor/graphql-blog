@@ -54,11 +54,16 @@ const PaginationLink = css`
   line-height: ${scaled.lineHeight};
 `;
 
+let browserWindow = { innerWidth: 1200 };
+if (typeof window !== `undefined`) {
+  browserWindow = window;
+}
+
 class BlogIndex extends React.Component {
   componentDidMount() {
-    this.onScroll = window.addEventListener('scroll', () => {
+    this.onScroll = browserWindow.addEventListener('scroll', () => {
       const scrollValue =
-        (document.documentElement.scrollTop + window.innerHeight) / document.documentElement.scrollHeight;
+        (document.documentElement.scrollTop + browserWindow.innerHeight) / document.documentElement.scrollHeight;
       if (scrollValue && !this.loading) {
         this.loading = true;
       }
@@ -91,7 +96,7 @@ class BlogIndex extends React.Component {
             ]}
           />
           <H1>GraphQL Blog</H1>
-          {window.innerWidth > 776 && <SubscribeBanner />}
+          {browserWindow.innerWidth > 776 && <SubscribeBanner />}
           <PostsGrid>
             {posts
               .filter((p) => p.node.frontmatter.title[0] !== '_')
@@ -115,7 +120,7 @@ class BlogIndex extends React.Component {
                   />
                 );
               })}
-            {window.innerWidth < 776 && <SubscribeBanner />}
+            {browserWindow.innerWidth < 776 && <SubscribeBanner />}
             {posts
               .filter((p) => p.node.frontmatter.title[0] !== '_')
               .splice(1, 999)
