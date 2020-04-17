@@ -234,7 +234,7 @@ export const SubscribeBanner = () => {
           </Disc>
         )}
         {browserWindow.innerWidth > 776 && (
-          <Disc version={theme[activeTheme].color}>Keep up with the latest web development trends</Disc>
+          <Disc version={theme[activeTheme].color}>Keep up with the latest web dev trends</Disc>
         )}
       </TextBox>
       <StyledForm>
