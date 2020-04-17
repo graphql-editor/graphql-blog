@@ -230,16 +230,16 @@ export const SubscribeBanner = () => {
         </H4>
         {browserWindow.innerWidth < 776 && (
           <Disc version={theme[activeTheme].color}>
-            Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
+           Learn how <Bolder>GraphQL</Bolder> can boost your efficiency
           </Disc>
         )}
         {browserWindow.innerWidth > 776 && (
-          <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>
+          <Disc version={theme[activeTheme].color}>Be the first to know all about GraphQL.</Disc>
         )}
       </TextBox>
       <StyledForm>
         <EmailInput
-          placeholder="email@somemail.com"
+          placeholder="Your Email Address"
           name="EMAIL"
           value={state.value}
           onChange={(e) => {

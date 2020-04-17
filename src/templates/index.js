@@ -81,7 +81,7 @@ class BlogIndex extends React.Component {
       <Background>
         <Nav
           Twitter={{
-            text: 'Check out this Graph QL Blog. Read about GraphQL ReactXP and other new technologies!',
+            text: 'Check out this GraphQL Blog. Read about GraphQL ReactXP and other new technologies!',
             url: 'https://blog.graphqleditor.com/',
           }}
         />
