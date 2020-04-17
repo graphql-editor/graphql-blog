@@ -271,7 +271,7 @@ export const SubscribeBanner = () => {
             }
           }}
         >
-          Keep Informed
+          SUBSCRIBE
         </SubBtn>
       </StyledForm>
       {browserWindow.innerWidth > 776 && (
