@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 
 import { Layout } from '../components/layout';
 import { Nav } from '../components/Nav';
-import { SubscribeBanner } from '../components/SubscribeBanner';
 import { Seo } from '../components/Seo';
 import { ArticleTile } from '../components/ArticleTile';
 
@@ -80,7 +79,6 @@ export default (props) => {
           ]}
         />
         <H1>GraphQL Blog</H1>
-        <SubscribeBanner />
         <PostsGrid>
           {posts
             .filter((p) => p.node.frontmatter.title[0] !== '_')
