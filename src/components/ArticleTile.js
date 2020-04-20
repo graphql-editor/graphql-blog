@@ -23,10 +23,8 @@ const TileMain = styled.div`
   &:hover {
     border: 1px solid ${ColorsSystem.Ultrasonic};
   }
-  @media(min-width:777px){
-    &:first-child {
-      width: 716px;
-    }
+  @media (max-width: 777px) {
+    width: 100% !important;
   }
 `;
 
@@ -80,8 +78,14 @@ const TilePostShortText = styled.p`
   padding: ${rhythm(1)};
 `;
 
-export const ArticleTile = ({ slug, title, excerpt, author, date, readingTime, image }) => (
-  <TileMain key={slug} onClick={() => navigate(slug)}>
+export const ArticleTile = ({ slug, title, excerpt, author, date, readingTime, image, big }) => (
+  <TileMain
+    key={slug}
+    style={{
+      width: big ? 716 : 343,
+    }}
+    onClick={() => navigate(slug)}
+  >
     <TileImg src={image ? image : require('../assets/placeholder.png')} />
     <TileTitle>
       <Link className={TileTitleLink} to={slug}>

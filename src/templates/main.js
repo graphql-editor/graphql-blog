@@ -54,6 +54,7 @@ const PaginationLink = css`
   font-size: ${scaled.fontSize};
   line-height: ${scaled.lineHeight};
 `;
+
 export default (props) => {
   const { index, last, first, group: posts } = get(props, 'pageContext');
   const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
@@ -61,7 +62,7 @@ export default (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
   const siteDescription = get(props, 'data.site.siteMetadata.description');
   const canonicalUrl = get(props, 'location.href');
-  const { width } = useWindowSize();
+  const { width = 1200 } = useWindowSize();
   return (
     <Background>
       <Nav
@@ -91,6 +92,7 @@ export default (props) => {
               return (
                 <ArticleTile
                   key={node.fields.slug}
+                  big
                   slug={node.fields.slug}
                   author={node.frontmatter.author}
                   date={node.frontmatter.date}
@@ -105,7 +107,7 @@ export default (props) => {
                 />
               );
             })}
-          {width < 776 && <SubscribeBanner />}
+          {width <= 776 && <SubscribeBanner />}
           {posts
             .filter((p) => p.node.frontmatter.title[0] !== '_')
             .splice(1, 999)

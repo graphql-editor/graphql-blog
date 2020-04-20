@@ -56,7 +56,6 @@ const Wrapper = styled.div`
   justify-content: center;
   height: 251px;
   width: 100%;
-  max-width: 340px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   @media (min-width: 777px) {
     margin: 32px auto ${rhythm(1)};
@@ -185,7 +184,6 @@ const ThankYou = styled.div`
   text-align: center;
   height: 251px;
   width: 100%;
-  max-width: 340px;
   @media (min-width: 777px) {
     margin: 32px auto ${rhythm(1)};
     height: 146px;
@@ -223,10 +221,10 @@ export const SubscribeBanner = () => {
     <Wrapper version={theme[activeTheme].bgColor}>
       <TextBox>
         <H4 version={theme[activeTheme].color}>
-          {width < 777 && 'Choose success!'}
+          {width <= 777 && 'Choose success!'}
           {width > 776 && 'Feed your brain!'}
         </H4>
-        {width < 776 && (
+        {width <= 776 && (
           <Disc version={theme[activeTheme].color}>
             Learn how <Bolder>GraphQL</Bolder> can boost your efficiency
           </Disc>
