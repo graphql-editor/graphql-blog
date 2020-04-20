@@ -228,14 +228,14 @@ export const SubscribeBanner = () => {
         </H4>
         {width < 776 && (
           <Disc version={theme[activeTheme].color}>
-            Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
+            Learn how <Bolder>GraphQL</Bolder> can boost your efficiency
           </Disc>
         )}
         {width > 776 && <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>}
       </TextBox>
       <StyledForm>
         <EmailInput
-          placeholder="email@somemail.com"
+          placeholder="Your Email Address"
           name="EMAIL"
           value={state.value}
           onChange={(e) => {
@@ -270,7 +270,7 @@ export const SubscribeBanner = () => {
             }
           }}
         >
-          Keep Informed
+          SUBSCRIBE
         </SubBtn>
       </StyledForm>
       {width > 776 && (
