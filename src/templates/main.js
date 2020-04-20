@@ -14,7 +14,6 @@ import { scale } from '../utils/typography';
 import { Footer } from '../components/Footer';
 import styled from '@emotion/styled';
 import { css } from 'emotion';
-import { useWindowSize } from '../utils/windowSize';
 
 const PaginationDiv = styled.div`
   padding: 20px 0;
@@ -62,7 +61,6 @@ export default (props) => {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
   const siteDescription = get(props, 'data.site.siteMetadata.description');
   const canonicalUrl = get(props, 'location.href');
-  const { width = 1200 } = useWindowSize();
   return (
     <Background>
       <Nav
@@ -82,7 +80,7 @@ export default (props) => {
           ]}
         />
         <H1>GraphQL Blog</H1>
-        {width > 776 && <SubscribeBanner />}
+        <SubscribeBanner />
         <PostsGrid>
           {posts
             .filter((p) => p.node.frontmatter.title[0] !== '_')
@@ -107,7 +105,6 @@ export default (props) => {
                 />
               );
             })}
-          {width <= 776 && <SubscribeBanner />}
           {posts
             .filter((p) => p.node.frontmatter.title[0] !== '_')
             .splice(1, 999)
