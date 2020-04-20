@@ -1,5 +1,5 @@
-import * as React from 'react'
-import Helmet from 'react-helmet'
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
 export const Seo = ({ title, description, url, lang = 'en', image, absouluteImage, twitter = '@GraphQLEditor' }) => (
   <Helmet
     htmlAttributes={{
@@ -28,4 +28,4 @@ export const Seo = ({ title, description, url, lang = 'en', image, absouluteImag
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content={twitter} />
   </Helmet>
-)
+);

@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                     image {
                       name
                       childImageSharp {
-                        fluid(maxWidth: 700) {
+                        fluid(maxWidth: 300) {
                           src
                         }
                       }
@@ -70,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
         createPaginatedPages({
           edges: result.data.allMarkdownRemark.edges,
           createPage,
-          pageTemplate: 'src/templates/index.js',
+          pageTemplate: 'src/templates/main.js',
           pageLength: 25, // This is optional and defaults to 10 if not used
         });
       }),

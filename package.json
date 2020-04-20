@@ -22,7 +22,7 @@
     "gatsby-plugin-feed-generator": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.1.23",
     "gatsby-plugin-manifest": "^2.2.23",
-    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.2.32",
     "gatsby-plugin-sitemap": "^2.2.19",
     "gatsby-plugin-typography": "^2.3.14",
@@ -39,7 +39,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-emotion": "^10.0.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-typography": "^0.16.19",
     "reading-time": "^1.2.0",
     "typography": "^0.16.19"
@@ -54,10 +54,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.16.0",
     "gh-pages": "^2.1.1",
+    "graphql-zeus": "latest",
     "gray-matter": "^4.0.2",
     "inquirer": "^7.0.0",
     "opn": "^6.0.0",
-    "prettier": "^1.18.2",
+    "prettier": "^2.0.4",
     "yargs": "^15.1.0"
   },
   "homepage": "https://blog.graphqleditor.com",
@@ -75,6 +76,7 @@
     "build": "rm -rf public && gatsby build --prefix-paths",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "blog": "node ./bin/index.js publish",
+    "schema": "zeus https://faker.graphqleditor.com/a-team/graphql-editor-microservice src",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { rhythm } from '../utils/typography';
 import { Gql } from '../graphql-zeus';
+import { useWindowSize } from '../utils/windowSize';
 
 const activeTheme = 1;
 
@@ -194,10 +195,6 @@ const ThankYou = styled.div`
     max-width: 1085px;
   }
 `;
-let browserWindow = { innerWidth: 1200 };
-if (typeof window !== `undefined`) {
-  browserWindow = window;
-}
 
 export const SubscribeBanner = () => {
   const [state, setState] = useState({
@@ -213,6 +210,7 @@ export const SubscribeBanner = () => {
       });
     }
   }, []);
+  const { width } = useWindowSize();
   if (state.subscribed) {
     return (
       <ThankYou version={theme[activeTheme].bgColor}>
@@ -225,17 +223,15 @@ export const SubscribeBanner = () => {
     <Wrapper version={theme[activeTheme].bgColor}>
       <TextBox>
         <H4 version={theme[activeTheme].color}>
-          {browserWindow.innerWidth < 777 && 'Choose success!'}
-          {browserWindow.innerWidth > 776 && 'Feed your brain!'}
+          {width < 777 && 'Choose success!'}
+          {width > 776 && 'Feed your brain!'}
         </H4>
-        {browserWindow.innerWidth < 776 && (
+        {width < 776 && (
           <Disc version={theme[activeTheme].color}>
             Get to know how <Bolder>GraphQl</Bolder> can boost your efficiency
           </Disc>
         )}
-        {browserWindow.innerWidth > 776 && (
-          <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>
-        )}
+        {width > 776 && <Disc version={theme[activeTheme].color}>Be the first to know all about Graph QL.</Disc>}
       </TextBox>
       <StyledForm>
         <EmailInput
@@ -264,7 +260,10 @@ export const SubscribeBanner = () => {
                 },
               }).then((response) => {
                 if (response.sendgrid && response.sendgrid.addMember) {
-                  browserWindow.localStorage.setItem('subscribed', 'subscribed');
+                  if (window) {
+                    window.localStorage.setItem('subscribed', 'subscribed');
+                  }
+
                   setState({ ...state, subscribed: true });
                 }
               });
@@ -274,7 +273,7 @@ export const SubscribeBanner = () => {
           Keep Informed
         </SubBtn>
       </StyledForm>
-      {browserWindow.innerWidth > 776 && (
+      {width > 776 && (
         <MailBox
           height={theme[activeTheme].mbHeight}
           right={theme[activeTheme].mbRight}
