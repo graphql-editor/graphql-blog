@@ -25,11 +25,11 @@ then use with `npx` or as a `package.json` script.
 
 
 |Database|Support|
-|--------|----------:|
-|MongoDB|yes|
-|JavaScript|yes| 
-|TypeScript|yes|
-|PostgreSQL|soon|
+|--------|----------|
+|MongoDB|YES|
+|JavaScript|YES| 
+|TypeScript|YES|
+|PostgreSQL|SOON|
 
 
 
