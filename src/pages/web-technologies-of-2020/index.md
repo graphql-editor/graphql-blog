@@ -1,4 +1,4 @@
---
+---
 title: Most wanted web technologies of 2020
 date: '2020-04-20T11:17:00.284Z'
 image: feat2020.png
