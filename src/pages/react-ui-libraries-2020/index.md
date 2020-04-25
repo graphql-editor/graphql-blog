@@ -11,7 +11,7 @@ What's special about React is that it first introduced us the component-based ar
 
 React's modular nature created an ecosystem of UI libraries that is growing rapidly. You probably all know the most popular ones:
 
-- [Material UI by Google](https://material-ui.com/),
+- [Material UI](https://material-ui.com/),
 - [React Bootstrap](https://react-bootstrap.github.io/),
 - [Blueprint UI](https://blueprintjs.com/),
 - [Ant Design](https://ant.design/),
@@ -32,7 +32,7 @@ but there are plenty of smaller/less known libraries which are also awesome. Let
 
 [GitHub](https://github.com/chakra-ui/chakra-ui) | [Website](https://chakra-ui.com/)
 
-![Chakra UI](chakra.png)]
+![Chakra UI](chakra.png)
 
 ## Rebass
 
@@ -40,7 +40,7 @@ but there are plenty of smaller/less known libraries which are also awesome. Let
 
 [GitHub](https://github.com/rebassjs/rebass) | [Website](https://rebassjs.org)
 
-![Rebass](rebass.png)]
+![Rebass](rebass.png)
 
 ## Evergreen
 
