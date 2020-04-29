@@ -6,7 +6,7 @@ author: Tomek
 ---
 
 
-**TypeScript** is a superset of JavaScript which provides a lot of benefits like autocompletion, type checking, classes, interfaces, and many more. Many developers have fallen in love with it since first use and consider is a one and only choice when writing modern web apps.
+TypeScript is a superset of JavaScript which provides a lot of benefits like autocompletion, type checking, classes, interfaces, and many more. Many developers have fallen in love with it since first use and consider is a one and only choice when writing modern web apps.
 
 Yesterday Microsoft dev team announced the release candidate version of **TypeScript 3.9 RC**. This version focuses mostly on improvements in performance and stability improvements like:
 
