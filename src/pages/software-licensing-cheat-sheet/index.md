@@ -26,7 +26,7 @@ The public domain is the most straightforward of the bunch. It’s not exactly a
 
 License examples:
 - Creative Commons CC0
-- Unlicensed
+- Unlicense
 - BSD0
 
 Software examples: SQLite, I2P, ImageJ
