@@ -22,7 +22,7 @@ Those determine how the subject software can be used or redistributed, the licen
 
 ## Public Domain
 
-The public domain is the most straightforward of the bunch. It’s not exactly a license, it’s more accurately a waiver of property rights. The author simply donates his work to the public domain. That means there is no copyright, patent or trademark and the software is free for use, modification, distribution or sale without any restrictions or even mentioning the original author. According to analysts, the public domain is the 7th most popular type of license used mainly in smaller SourceForge and GitHub projects. 
+The public domain is the most straightforward of the bunch. It’s not exactly a license, it’s more accurately a waiver of property rights. The author simply donates his/her work to the public domain. That means there is no copyright, patent or trademark and the software is free for use, modification, distribution or sale without any restrictions or even mentioning the original author. According to analysts, the public domain is the 7th most popular type of license used mainly in smaller SourceForge and GitHub projects. 
 
 License examples:
 - Creative Commons CC0
