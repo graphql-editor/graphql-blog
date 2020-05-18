@@ -1,5 +1,5 @@
 ---
-title: Software licensing Part II - a deeper dive into licenses types
+title: Software licensing Part II - a deeper dive into license types
 date: '2020-05-18T11:12:00.284Z'
 image: lic_feat2.png
 author: Michal
