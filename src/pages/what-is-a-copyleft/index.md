@@ -1,5 +1,5 @@
 ---
-title: Is it right to use Copyleft?
+title: Software Licensing: What is a Copyleft
 date: '2020-05-25T10:17:00.284Z'
 image: copyleft_feat.png
 author: Michal
