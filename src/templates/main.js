@@ -35,7 +35,7 @@ const H1 = styled.h1`
 
 const PostsGrid = styled.div`
   margin: 0px;
-  padding-top: 0px;
+  padding-top: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
