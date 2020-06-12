@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-export const Seo = ({ title, description, url, lang = 'en', image, absouluteImage, twitter = '@GraphQLEditor' }) => (
+const fakeOrigin = 'http://blog.graphqleditor.com';
+export const Seo = ({ title, description, url, lang = 'en', absouluteImage, twitter = '@GraphQLEditor' }) => (
   <Helmet
     htmlAttributes={{
       lang,
@@ -17,14 +18,14 @@ export const Seo = ({ title, description, url, lang = 'en', image, absouluteImag
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={absouluteImage || `${fakeOrigin}${require('../assets/graphql-header.jpg')}`} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:title" content={title} />
     <meta name="twitter:site" content="@GraphQLEditor" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={absouluteImage} />
+    <meta name="twitter:image" content={absouluteImage || `${fakeOrigin}${require('../assets/graphql-header.jpg')}`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:creator" content={twitter} />
   </Helmet>
