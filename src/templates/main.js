@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 import { Helmet } from 'react-helmet';
 
-import { Layout } from '../components/layout';
+import { Container } from '../components/Container';
 import { Nav } from '../components/Nav';
 import { Seo } from '../components/Seo';
 import { ArticleTile } from '../components/ArticleTile';
@@ -23,14 +23,6 @@ const PaginationDiv = styled.div`
 
 const Background = styled.div`
   background: ${ColorsSystem.Black}11;
-`;
-
-const H1 = styled.h1`
-  margin: 38px auto;
-  text-align: center;
-  @media (min-width: 777px) {
-    display: none;
-  }
 `;
 
 const PostsGrid = styled.div`
@@ -68,7 +60,7 @@ export default (props) => {
           url: 'https://blog.graphqleditor.com/',
         }}
       />
-      <Layout>
+      <Container>
         <Seo title={siteTitle} description={siteDescription} url={canonicalUrl} />
         <Helmet
           meta={[
@@ -78,7 +70,6 @@ export default (props) => {
             },
           ]}
         />
-        <H1>GraphQL Blog</H1>
         <PostsGrid>
           {posts
             .filter((p) => p.node.frontmatter.title[0] !== '_')
@@ -138,7 +129,7 @@ export default (props) => {
             </Link>
           )}
         </PaginationDiv>
-      </Layout>
+      </Container>
       <Footer />
     </Background>
   );

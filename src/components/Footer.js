@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Layout } from '../components/layout';
+import { Container } from '../components/Container';
 import { footerData } from './text_data';
 import { FooterWidget } from './FooterWidget';
 import { Colors } from '../Colors';
@@ -40,7 +40,7 @@ export class Footer extends React.Component {
   render() {
     return (
       <FooterTile>
-        <Layout>
+        <Container>
           <Widget>
             {footerData.map((el) => (
               <FooterWidget key={el.title} title={el.title} links={el.links} linksTo={el.linksTo} />
@@ -49,7 +49,7 @@ export class Footer extends React.Component {
           <Copy>
             <p>&copy; Copyright 2018 Graphqleditor.com</p>
           </Copy>
-        </Layout>
+        </Container>
       </FooterTile>
     );
   }

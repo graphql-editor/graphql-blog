@@ -12,7 +12,6 @@
     "@emotion/styled-base": "^10.0.28",
     "@openfonts/fira-sans_latin": "^1.44.0",
     "auth0-js": "^9.11.3",
-    "disqus-react": "^1.0.7",
     "emotion": "^10.0.27",
     "emotion-server": "^10.0.27",
     "gatsby": "^2.17.1",

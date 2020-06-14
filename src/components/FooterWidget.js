@@ -22,6 +22,8 @@ const H4 = styled.h4`
 
 const Ul = styled.ul`
   list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 const Li = styled.li`
